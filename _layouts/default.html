@@ -2,19 +2,19 @@
 
 <html>
 
-{% include head.html %}
+{% include commons/head.html %}
 
 <body>
 
-  {% include navbar.html %}
+  {% include commons/header.html %}
 
   {{ content }}
 
-  {% include footer.html %}
+  {% include commons/footer.html %}
 
-  {% include scripts.html %}
+  {% include vendor/scripts.html %}
 
-  {% include google-analytics.html %}
+  {% include vendor/google-analytics.html %}
 
 </body>
 

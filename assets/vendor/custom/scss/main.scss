@@ -1,9 +1,5 @@
-@import "variables.scss";
-@import "mixins.scss";
-@import "global.scss";
-@import "navbar.scss";
-@import "masthead.scss";
-@import "post.scss";
-@import "contact.scss";
-@import "footer.scss";
-@import "bootstrap-overrides.scss";
+@import "abstract/abstract";
+@import 'base/base';
+@import "components/components";
+@import "layouts/layouts";
+@import "pages/pages";

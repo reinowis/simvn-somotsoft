@@ -48,7 +48,7 @@ layout: default
             {{ site.author }}
             {% endif %}
             on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+            {{ post.date | date: '%B %d, %Y' }} &middot; {% include vendor/read_time.html content=post.content %}            
           </p>
         </article>
 
@@ -65,4 +65,4 @@ layout: default
     </div>
     
   </div>
-  {% include category_grid.html %}
+  {% include homepage/category_grid.html %}
