@@ -1,0 +1,12 @@
+- name: QUY MÔ KHO BÃI
+  content: Chúng tôi có kho ở hai đầu Bắc và Nam được xây dựng hiện đại và vận hành theo quy chuẩn HACCP, bảo đảm chất lượng sản phẩm hoàn hảo khi giao tới khách hàng.
+  icon: /assets/images/info-icon-01.png
+  image: /assets/images/info-01.png
+- name: ĐỘI NGŨ NHÂN VIÊN
+  content: Với đội ngũ hơn 100 nhân viên có nhiều kinh nghiệm trong lĩnh vực thực phẩm, thức ăn chăn nuôi, hóa chất,... chúng tôi sẵn sàng tư vấn hỗ trợ kỹ thuật, đáp ứng nhu cầu của khách hàng một cách hoàn hảo và cam kết mang lại lợi ích cho khách hàng với thái độ phục vụ tận tình, chuyên nghiệp,
+  icon: /assets/images/info-icon-02.png
+  image: /assets/images/info-02.png
+- name: VĂN PHÒNG CÔNG TY
+  content: Trên hết, chúng tôi xây dựng một môi trường làm việc xanh, thân thiện, năng động, với nhiều thử thách và cơ hội học hỏi, thăng tiến; đội ngũ nhân viên chuyên nghiệp, sáng tạo với tinh thần đồng đội cao.
+  icon: /assets/images/info-icon-03.png
+  image: /assets/images/info-03.png    

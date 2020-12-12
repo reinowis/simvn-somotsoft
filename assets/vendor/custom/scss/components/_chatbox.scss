@@ -1,0 +1,19 @@
+.chat-box{
+    .chat-box{
+        width: 199px;
+        height: 35.5px;
+        padding: 6.3px 114.3px 16.3px 11px;
+        border-radius: 6px 6px 0px 0px;
+        background-color: $purply;
+        &__status{
+            color: #ffffff;
+            &--activated{
+                color: $turtle-green;
+            }
+        }
+        &__title{
+            color: #ffffff;
+            @extend .text-chatbox;
+        }
+    }
+}

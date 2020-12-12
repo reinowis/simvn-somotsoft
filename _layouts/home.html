@@ -2,67 +2,121 @@
 layout: default
 ---
 
-<!-- Page Header -->
-{% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
-  {% else %}
-  <header class="masthead">
-    {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ site.title }}</h1>
-            {% if site.description %}
-            <span class="subheading">{{ site.description }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+<!-- Homepage Banner -->
+{%- include homepage/homepage_banner.html -%}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        {{ content }}
-
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
-
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include vendor/read_time.html content=post.content %}            
-          </p>
-        </article>
-
-        <hr>
-
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
-        </div>
-
+<!-- Category Grid -->
+<section class="container section category-grid">
+    <div class="row not-gutters">
+      <div class="col-12">
+            <h2 class="section__title">NHÓM SẢN PHẨM CHÍNH</h2>
+            <div class="section__content">
+              <p>Công ty S.I.M.VN sẵn sàng cung cấp các loại nguyên liệu, phụ gia thực phẩm, hóa chất... theo nhu cầu của khách hàng. Chúng tôi luôn cập nhật theo xu thế và sự phát triển của thế giới.</p>
+            </div>
       </div>
     </div>
     
-  </div>
-  {% include homepage/category_grid.html %}
+    <div class="row no-gutters category-grid__wrapper">
+      {%- for item in site.data.categories -%}
+      <div class="col-12 col-sm-6 col-lg-3 category-grid__item">
+          <div class="category-grid__item__image">
+            <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+          </div>
+          <div class="category-grid__item__content">
+            <div class="category-grid__item__title">{{item.name}}</div>
+            <div class="category-grid__item__text">
+              <span>
+                <i class="fas fa-user"></i> {{item.contact.name}}
+              </span>
+              <span>
+                <i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}
+              </span>
+              <span>
+                <i class="fas fa-envelope"></i> {{item.contact.name}}
+              </span>
+            </div>
+            <div class="category-grid__item__action">
+              <a href="#" class="btn">Xem thêm</a>
+            </div>
+          </div>
+      </div>
+      {%- endfor -%}
+      
+    </div>
+</section>  
+<!-- Company Information -->
+<section class="container section company-info">
+    <div class="row no-gutters">
+      <div class="col-12">
+            <h2 class="section__title">GIỚI THIỆU VỀ CÔNG TY</h2>
+            <div class="section__content">
+              <p>Với hơn 20 năm kinh nghiệm, Công Ty Cổ Phần S.I.M. VN luôn sẵn sàng phục vụ tận tâm, vì sức khoẻ cộng đồng đáp ứng nhu cầu của khách hàng một cách hoàn hảo, cam kết mang lại lợi ích cao nhất cho khách hàng.
+            </p>
+            </div>
+      </div>
+    </div>
+    
+    <div class="row no-gutters company-info__wrapper">
+        {%- for item in site.data.information -%}
+        <div class="col-12 col-lg-4 company-info__item">
+            <div class="company-info__item__image">
+                <img class="img-fluid" src="{{item.image | relative_url}}" alt="{{item.name}}">
+            </div> 
+            <div class="company-info__item__wrapper">
+                <div class="company-info__item__icon">
+                    <img class="img-fluid" src="{{item.icon | relative_url}}" alt="{{item.name}}">
+                </div>
+                <div class="company-info__item__content">
+                    <p>{{item.content}}</p>
+                </div>
+            </div>
+         </div>
+        {%- endfor -%}
+    </div>
+</section>  
+<!-- Partners Logo -->
+<section class="container section partner-slides">
+    <div class="row no-gutters">
+        <div class="col-12">
+                <h2 class="section__title">ĐỐI TÁC CHIẾN LƯỢC - NHÀ CUNG CẤP ĐỘC QUYỀN</h2>
+                <div class="section__content">
+                <p>SIM là nhà cung cấp chiến lược, lâu dài và uy tín của hầu hết các nhà sản xuất đầu ngành trong mọi lãnh vực chế biến thực phẩm , dược phẩm,  thức ăn gia súc.
+                </p>
+                </div>
+        </div>
+    </div>
+    <div class="row no-gutters partner-slides__wrapper">
+        <div class="col-12">
+            <div class="owl-carousel owl-theme" data-slides="4">
+                {%- for item in site.data.partners -%}
+                    <div class="partner-slides__item">
+                        <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
+                    </div>
+                {%- endfor -%}
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container section testimonial">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <h2 class="section__title">ĐỐI TÁC CHIẾN LƯỢC - NHÀ CUNG CẤP ĐỘC QUYỀN</h2>
+        </div>
+    </div>
+    {%- for item in site.data.testimonials -%}
+    <div class="row no-gutters testimonial__item">
+        <div class="col-12 col-lg-6 testimonial__item__content">
+            <h3 class="testimonial__item__title">{{item.title}}</h3>
+            <h4 class="testimonial__item__author">{{item.author}}</h4>
+            <p class="testimonial__item__content">{{item.content}}</p>
+            <hr class="testimonial__item__breakline"/>
+            <p class="testimonial__item__author--small">{{item.author}}</p>
+        </div>
+        <div class="col-12 col-lg-6 testimonial__item__image">
+            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
+        </div>
+    </div>
+    {%- endfor -%}
+    
+</section>

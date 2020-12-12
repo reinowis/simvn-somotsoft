@@ -1,13 +1,39 @@
 <!-- Category Grid -->
-<div class="container category-grid">
-  <div class="row">
-    <div class="col-12 col-sm-3 category-grid__item">
-        <div class="category-grid__item__title">SỮA, KEM, YOGURT</div>
-        <div class="category-grid__item__content">
-          <span></span>
-          
-        </div>
-        <div class="category-grid__item__action"></div>
+<section class="container section category-grid">
+  <div class="row not-gutters">
+    <div class="col-12">
+          <h2 class="section__title">Công ty S.I.M.VN sẵn sàng cung cấp các loại nguyên liệu, phụ gia thực phẩm, hóa chất... theo nhu cầu của khách hàng. Chúng tôi luôn cập nhật theo xu thế và sự phát triển của thế giới.</h2>
+          <div class="section__content">
+            <p>Công ty S.I.M.VN sẵn sàng cung cấp các loại nguyên liệu, phụ gia thực phẩm, hóa chất... theo nhu cầu của khách hàng. Chúng tôi luôn cập nhật theo xu thế và sự phát triển của thế giới.</p>
+          </div>
     </div>
   </div>
-</div>  
+  
+  <div class="row no-gutters category-grid__wrapper">
+    {%- for item in site.data.categories -%}
+    <div class="col-12 col-sm-6 col-lg-3 category-grid__item">
+        <div class="category-grid__item__image">
+          <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+        </div>
+        <div class="category-grid__item__content">
+          <div class="category-grid__item__title">{{item.name}}</div>
+          <div class="category-grid__item__text">
+            <span>
+              <i class="fas fa-user"></i> {{item.contact.name}}
+            </span>
+            <span>
+              <i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}
+            </span>
+            <span>
+              <i class="fas fa-envelope"></i> {{item.contact.name}}
+            </span>
+          </div>
+          <div class="category-grid__item__action">
+            <a href="#" class="btn">Xem thêm</a>
+          </div>
+        </div>
+    </div>
+    {%- endfor -%}
+    
+  </div>
+</section>  

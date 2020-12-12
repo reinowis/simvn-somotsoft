@@ -1,0 +1,10 @@
+- name: Trang chủ
+  id: home
+- name: Giới thiệu
+  id: about
+- name: Sản phẩm
+  id: products
+- name: Liên hệ
+  id: contact
+- name: Tuyển dụng
+  id: hiring

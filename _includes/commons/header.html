@@ -3,57 +3,97 @@
   <div class="container header-headline">
     <div class="d-flex justify-content-between header-headline__wrapper">
       <div class="header-headline__item">
-  
+        <span class="ws-nowrap">
+          <span class="header-headline__item__icon"><i class="fas fa-phone fa-flip-horizontal"></i></span> <span>+84 (28) 5413 3636</span>
+        </span>
       </div>
       <div class="header-headline__item">
-        
+        <span class="header-headline__item__icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div class="header-headline__item__address">
+          <span>Head Office: {{site.data.contact.address.head}} | Branch: {{site.data.contact.address.branch}}</span>
+          <span>Rep. Office: {{site.data.contact.address.rep}}</span>
+        </div>
       </div>
       <div class="header-headline__item">
-        
+        <span class="header-headline__item__icon"><i class="fas fa-envelope"></i></span>
+        <span>info@simvn.biz</span>
+        <span class="header-headline__item__icon header-headline__item__like"><i class="far fa-heart"></i></span>
       </div>
-      <div class="header-headline__item">
-        
+      <div class="header-headline__item ws-nowrap">
+        <span>Ngôn ngữ</span>
+        <a href="#" class="header-headline__item__lang"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header-headline__item__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
       </div>
     </div>
   </div>
   <div class="container header-main">
     <div class="d-flex justify-content-between header-main__wrapper">
-      <div class="header-main__item header-main__logo">
-  
+      <div class="header-main__item">
+        <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
       </div>
-      <div class="header-main__item ">
-        <div class="header-main__searchbar"></div>
+      <div class="header-main__item flex-grow-1">
+        <div class="header-main__searchbar">
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <select name="search-select" id="search-select" class="form-control">
+                  <option value="">Tất cả thư mục</option>
+                </select>
+              </div>
+              <input type="text" class="form-control" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
+            </div>
+          </form>
+          
+
+        </div>
         <div class="header-main__menu">
           <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
               <div class="container">
-                <a class="navbar-brand" href="{{"/" | relative_url }}">{{ site.title | escape }}</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  Menu
                   <i class="fa fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
+                    {%- for item in site.data.menu -%}
                     <li class="nav-item">
-                      <a class="nav-link" href="{{"/" | relative_url }}">Home</a>
+                      <a class="nav-link" href="{{"/" | relative_url }}">{{item.name}}</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{"/about" | relative_url }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ "/posts" | relative_url }}">Posts</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{"/contact" | relative_url }}">Contact</a>
-                    </li>
+                    {%- endfor -%}
                   </ul>
                 </div>
+              </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  {%- for item in site.data.menu -%}
+                  {% if item.id == 'products' %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{item.name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </li>
+                  {% else %}
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">{{item.name}}</a>
+                  </li>
+                  {% endif %}
+                  
+                  {%- endfor -%}
+                  
+                </ul>
               </div>
             </nav>
         </div>
       </div>
       <div class="header-main__item">
-        
+          <button class="btn btn-block">Tìm kiếm</button>
       </div>
     </div>
   </div>

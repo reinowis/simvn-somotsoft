@@ -1,74 +1,74 @@
 <!-- Footer -->
-
-<hr>
-
-<footer>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="chat-box">
+        <span class="chat-box__status">
+          <i class="fas fa-circle"></i>
+        </span>
+        <span class="chat-box__title">Chat Online</span>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          {% if site.email %}
-          <li class="list-inline-item">
-            <a href="mailto:{{ site.email | encode_email }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+    <div class="row no-gutters footer__wrapper">
+      <div class="col-12 footer__logo">
+        <img src="{{"/assets/images/logo-footer.png" | relative_url}}" alt="Logo" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row no-gutters footer__wrapper justify-content-between">
+      <div class="footer__info">
+        <h3 class="footer__heading">Thông tin liên hệ chung</h3>
+        <ul class="footer__list">
+          <li class="footer__list__item">
+            Head Office: {{site.data.contact.address.head}}
           </li>
-          {% endif %}
-          {% if site.twitter_username %}
-          <li class="list-inline-item">
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+          <li class="footer__list__item">
+            Rep. Office: {{site.data.contact.address.rep}}
           </li>
-          {% endif %}
-          {% if site.facebook_username %}
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/{{ site.facebook_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+          <li class="footer__list__item">
+             Branch: {{site.data.contact.address.branch}}
           </li>
-          {% endif %}
-          {% if site.linkedin_username %}
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+          <li class="footer__list__item">
+            Điện thoại: {{site.data.contact.phone}}
           </li>
-          {% endif %}
-          {% if site.github_username %}
-          <li class="list-inline-item">
-            <a href="https://github.com/{{ site.github_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+          <li class="footer__list__item">
+            Email: {{site.data.contact.email}}
           </li>
-          {% endif %}
-          {% if site.instagram_username %}
-          <li class="list-inline-item">
-            <a href="https://instagram.com/{{ site.instagram_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
         </ul>
-        <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }}</p>
+        <ul class="footer__social-list">
+          {%- for item in site.data.contact.social -%}
+          <li class="footer__social-list__item">
+            <a href="#">
+              <img src="{{item.icon | relative_url}}" alt="{{item.id}}" class="img-fluid">
+            </a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="footer__category">
+        <h3 class="footer__heading">Danh mục sản phẩm</h3>
+        <ul class="footer__list footer__list--split">
+          {%- for item in site.data.categories -%}
+          <li class="footer__list__item">
+            <a href="#">{{item.name}}</a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="footer__map">
+        <img src="{{"/assets/images/maps.png" | relative_url}}" alt="maps" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row no-gutters footer__copyright">
+      <div class="col-12 text-center">
+        <span class="footer__copyright__text">Copyright © 2020 SIM.vn Company</span>
       </div>
     </div>
   </div>

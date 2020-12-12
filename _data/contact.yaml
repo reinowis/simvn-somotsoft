@@ -1,0 +1,17 @@
+phone: +84 (28) 5413 3636
+address:
+  head: D.07B Street No. 3, Long Hau I.P., Long An Province, Vietnam
+  branch: No. 5, Street 3, VSIP Bac Ninh, Bac Ninh Province, Vietnam
+  rep: 3rd fl., Capital Tower, 6 Nguyen Khac Vien Str., PMH, District 7, Hochiminh City, Vietnam
+email: info@simvn.biz
+social:
+  - id: facebook
+    icon: /assets/images/001-facebook.svg
+  - id: linkedin
+    icon: /assets/images/002-linkedin.svg
+  - id: twitter
+    icon: /assets/images/003-twitter.svg
+  - id: youtube
+    icon: /assets/images/004-youtube.svg
+  - id: facebook
+    icon: /assets/images/005-instagram.svg
