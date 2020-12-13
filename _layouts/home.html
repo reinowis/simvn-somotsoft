@@ -26,15 +26,13 @@ id: home
           <div class="category-grid__item__content">
             <div class="category-grid__item__title">{{item.name}}</div>
             <div class="category-grid__item__text">
-              <span>
-                <i class="fas fa-user"></i> {{item.contact.name}}
-              </span>
-              <span>
-                <i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}
-              </span>
-              <span>
-                <i class="fas fa-envelope"></i> {{item.contact.name}}
-              </span>
+              <p class="mb-0">
+                <span><i class="fas fa-user"></i> {{item.contact.name}}</span>
+                <span><i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}</span>
+              </p>
+              <p class="mb-0">
+                <span><i class="fas fa-envelope"></i> {{item.contact.name}}</span>
+              </p>
             </div>
             <div class="category-grid__item__action">
               <a href="#" class="btn">Xem thêm</a>
@@ -91,7 +89,7 @@ id: home
     </div>
     <div class="row no-gutters partner-slides__wrapper">
         <div class="col-12">
-            <div class="owl-carousel owl-theme" data-slides="4">
+            <div class="owl-carousel owl-theme" data-slides="4" data-slides-mobile="2" data-nav="true" data-loop="true">
                 {%- for item in site.data.partners -%}
                     <div class="partner-slides__item">
                         <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
@@ -105,7 +103,7 @@ id: home
 <section class="container section testimonial">
     <div class="row no-gutters">
         <div class="col-12">
-            <h2 class="section__title">ĐỐI TÁC CHIẾN LƯỢC - NHÀ CUNG CẤP ĐỘC QUYỀN</h2>
+            <h2 class="section__title">CẢM NGHĨ CỦA ĐỐI TÁC VỀ S.I.M VN</h2>
         </div>
     </div>
     {%- for item in site.data.testimonials -%}

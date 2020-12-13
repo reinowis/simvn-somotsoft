@@ -36,6 +36,7 @@
                 list-style-image: url(/assets/images/footer-list-style.svg);
                 @extend .text-footer__list;
                 a{
+                    text-transform: capitalize;
                     color: #dddddd;
                 }
             }
@@ -71,16 +72,23 @@
             &__wrapper{
                 display: flex;
                 flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            &__logo{
+                text-align: center;
             }
             &__info{
                 order: 2;
             }
             &__category{
+                order: 3;
                 flex-grow: 3;
                 padding-right: 0px;
             }
             &__map{
                 order: 1;
+                text-align: center;
+                margin-bottom: 15px;
             }
         }
     }

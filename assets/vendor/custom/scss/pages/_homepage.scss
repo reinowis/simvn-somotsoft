@@ -7,9 +7,13 @@
         flex-direction: column;
         justify-content: space-between;
         &__image{
+            max-height: 50%;
             img{
                 width: 100%;
+                height: 100%;
                 margin: auto;
+                object-fit: cover;
+                object-position: center center;
             }
         }
         &__wrapper{
@@ -18,6 +22,8 @@
             align-items: center;
             padding-top: 15px;
             padding-bottom: 15px;
+            justify-content: center;
+            flex-grow: 1;
         }
         &__icon{
             margin-bottom: 20px;
@@ -40,6 +46,7 @@
                 .company-info__item{
                     &__wrapper{
                         padding-top: 0px;
+                        justify-content: flex-start;
                     }
                 }
             }
@@ -86,7 +93,7 @@
             }
         }
         &__breakline{
-            max-width: 27px;
+            max-width: 30px;
             position: relative;
             border-top: solid 0.5px $deep-violet;
             margin: 15px auto 7px 0px;
@@ -94,10 +101,11 @@
                 content: '';
                 position: absolute;
                 z-index: 1;
-                top: 0px;
+                top: -1px;
                 left: 19.5px;
                 width: 3px;
-                background-color: $deep-violet;
+                height: 0.5px;
+                background-color: $white-two;
             }
         }
     }

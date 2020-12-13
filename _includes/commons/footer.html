@@ -55,7 +55,7 @@
         <ul class="footer__list footer__list--split">
           {%- for item in site.data.categories -%}
           <li class="footer__list__item">
-            <a href="#">{{item.name}}</a>
+            <a href="#">{{item.name | capitalize }}</a>
           </li>
           {%- endfor -%}
         </ul>

@@ -1,6 +1,6 @@
 <!-- Header -->
 <header class="header">
-  <div class="header__headline">
+  <div class="header__headline d-none d-lg-flex">
     <div class="container header__headline__wrapper">
       <div class="header__headline__item">
         <span class="header__headline__item__icon"><i class="fas fa-phone fa-flip-horizontal"></i></span> 
@@ -16,16 +16,18 @@
       <div class="header__headline__item">
         <span class="header__headline__item__icon"><i class="fas fa-envelope"></i></span>
         <span>info@simvn.biz</span>
-        <span class="header__headline__item__icon header__headline__item__like"><i class="far fa-heart"></i></span>
+        <a href="#"
+        ><span class="header__headline__item__icon header__headline__item__like"></span></a>
+        </span>
       </div>
       <div class="header__headline__item ws-nowrap">
         <span>Ngôn ngữ</span>
-        <a href="#" class="header__headline__item__icon header__headline__item__icon--lang"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
-        <a href="#" class="header__headline__item__icon header__headline__item__icon--lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__headline__item__lang header__headline__item__lang--activated"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__headline__item__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
       </div>
     </div>
   </div>
-  <div class="container header__main">
+  <div class="container header__main d-none d-lg-block">
     <div class="d-flex justify-content-between header__main__wrapper">
       <div class="header__main__item">
         <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
@@ -47,22 +49,6 @@
         </div>
         <div class="header__main__menu">
           <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none" id="mainNav">
-              <div class="container">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                    {%- for item in site.data.menu -%}
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{"/" | relative_url }}">{{item.name}}</a>
-                    </li>
-                    {%- endfor -%}
-                  </ul>
-                </div>
-              </div>
-            </nav>
             <nav class="header__menu">
                 <ul class="header__menu__wrapper">
                   {%- for item in site.data.menu -%}
@@ -100,4 +86,39 @@
       </div>
     </div>
   </div>
+  <nav class="navbar navbar-expand-lg d-lg-none">
+    <div class="header__main">
+      <div class="header__main__item">
+        <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+      </div>
+      <div class="header__main__item">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          {%- for item in site.data.menu -%}
+          <li class="nav-item">
+            <a class="nav-link" href="{{"/" | relative_url }}">{{item.name}}</a>
+          </li>
+          {%- endfor -%}
+        </ul>
+        <div class="header__searchbar">
+          <form>
+            <div class="input-group header__searchbar__wrapper">
+              <div class="input-group-prepend">
+                <select name="search-select" id="search-select" class="form-control header__searchbar__select">
+                  <option value="">Tất cả thư mục</option>
+                </select>
+              </div>
+              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
+            </div>
+          </form>
+          
+
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>

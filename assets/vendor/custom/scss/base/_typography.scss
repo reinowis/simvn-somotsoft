@@ -4,7 +4,6 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 25px;
     letter-spacing: 1.84px;
     text-align: left;
   }
@@ -15,7 +14,6 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 20px;
     letter-spacing: 1.4px;
     text-align: center;
   }
@@ -26,7 +24,6 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 7px;
     letter-spacing: 1.4px;
     text-align: center;
   }
@@ -37,7 +34,6 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 15px;
     letter-spacing: normal;
     text-align: center;
   }
@@ -48,18 +44,16 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 15px;
     letter-spacing: normal;
     text-align: center;
   }
   
   .text-feedback__caption {
     font-family: iCielFester;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 18px;
     letter-spacing: -0.3px;
     text-align: left;
   }
@@ -70,7 +64,6 @@
     font-weight: normal;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 15.5px;
     letter-spacing: normal;
     text-align: center;
   }
@@ -81,18 +74,16 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 19.5px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-section__content {
     font-family: SVN-Circular;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 18px;
     letter-spacing: normal;
     text-align: center;
   }
@@ -103,18 +94,16 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 14px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-intro__content {
     font-family: SVN-Circular;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 15px;
     letter-spacing: normal;
     text-align: left;
   }
@@ -125,7 +114,6 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 11px;
     letter-spacing: normal;
     text-align: left;
   }
@@ -136,161 +124,99 @@
     font-weight: bold;
     font-stretch: semi-condensed;
     font-style: normal;
-    line-height: 20px;
     letter-spacing: 0.72px;
     text-align: center;
-  }
-  
-  .text-menu--activated {
-    font-family: SVN-Circular;
-    font-size: 8px;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 9px;
-    letter-spacing: normal;
-    text-align: left;
   }
 
   .text-dropdown {
     font-family: SVN-Circular;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 25px;
     letter-spacing: normal;
     text-align: left;
   }
 
   .text-menu {
     font-family: SVN-Circular;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 9px;
     letter-spacing: normal;
     text-align: left;
+    &--activated {
+        font-weight: 900;
+    }
   }
 
   .text-feedback__content {
     font-family: SVN-Circular;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 15px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-btn-search {
     font-family: SVN-Circular;
-    font-size: 7.5px;
+    font-size: 10px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 8px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-headline {
     font-family: SVN-Circular;
-    font-size: 7.5px;
+    font-size: 10px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 8px;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-product--mobile__content {
-    font-family: SVN-Circular;
-    font-size: 7px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 10px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-copyright {
     font-family: Poppins;
-    font-size: 7px;
+    font-size: 10px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 14px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-footer__list {
     font-family: SVN-Circular;
-    font-size: 7px;
+    font-size: 10px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 12.5px;
     letter-spacing: 0.32px;
     text-align: left;
   }
   
   .text-btn-view {
     font-family: SVN-Circular;
-    font-size: 6.5px;
+    font-size: 10px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 7.5px;
     letter-spacing: normal;
     text-align: left;
   }
   
   .text-category--grid__content {
     font-family: SVN-Circular;
-    font-size: 6px;
+    font-size: 10px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 10px;
     letter-spacing: 0.48px;
-    text-align: left;
-  }
-  
-  .text-product--mobile__caption {
-    font-family: SVN-Circular;
-    font-size: 6px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 15px;
-    letter-spacing: 0.75px;
-    text-align: left;
-  }
-  
-  .text-banner--mobile__caption {
-    font-family: SVN-Circular;
-    font-size: 5px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 6px;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-product--mobile__path {
-    font-family: iCielFester;
-    font-size: 4px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    line-height: 8.5px;
-    letter-spacing: 0.5px;
     text-align: left;
   }

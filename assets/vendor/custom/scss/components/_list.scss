@@ -37,6 +37,10 @@
                 height: 100%;
                 padding: 24.5px 36px;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             &__title{
                 @extend .text-category--grid__heading;
@@ -46,6 +50,8 @@
                 margin-bottom: 21.5px;
             }
             &__text{
+                text-align: center;
+                margin-bottom: 7.5px;
                 color: #ffffff;
                 @extend .text-category--grid__content;
             }
@@ -55,15 +61,8 @@
                     border-radius: 2px;
                     box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.16);
                     background-color: #d78e5b;
-                    font-family: SVN-Circular;
-                    font-size: 5px;
-                    font-weight: 500;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.2;
-                    letter-spacing: normal;
-                    text-align: left;
                     color: #f8f9fb;
+                    @extend .text-btn-view;
                 }
             }
         }

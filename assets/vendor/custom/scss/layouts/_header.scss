@@ -1,13 +1,14 @@
 .header{
+    background: $white;
     &__headline{
         border-bottom: solid 1px $very-light-pink-three;
         &__wrapper{
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         &__item{
-            padding-left: 8.5px;
-            padding-right: 8.5px;
+            padding: 3.5px 8.5px;
             display: flex;
             align-items: center;
             border-right: solid 1px $very-light-pink-three;
@@ -20,9 +21,22 @@
             &__icon{
                 padding: 2px;
             }
+            &__like{
+                display: block;
+                width: 13.8px;
+                height: 12.2px;
+                background-image: url(/assets/images/like.svg);
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                padding: 0px;
+                margin: 0px 10.7px;
+            }
             &__lang{
-                margin-left: 10.7px;
-                margin-right: 10.7px;
+                opacity: 0.18;
+                &--activated{
+                    opacity: 1;
+                }
             }
             &:first-child{
                 padding-left: 0px;
@@ -34,8 +48,8 @@
         }
     }
     &__main{
-        margin-top: 8.5px;
-        margin-bottom: 15px;
+        padding-top: 8.5px;
+        padding-bottom: 15px;
         &__item{
             padding-left: 25px;
             padding-right: 25px;
@@ -54,6 +68,8 @@
             justify-content: space-between;
             list-style: none;
             padding: 0px;
+            margin: 0px;
+            flex-wrap: wrap;
         }
         &__item{
             &__text{
@@ -103,6 +119,7 @@
             color: $eggplant;
             @extend .text-dropdown;
             &__text{
+                text-transform: uppercase;
                 color: $eggplant;
             }
             &:hover{
@@ -153,4 +170,9 @@
             @extend .text-headline;
         }
     }
+//     &.is-sticky{
+//         position: sticky;
+//         top: 0px;
+//         z-index: 20;
+//     }
 }
