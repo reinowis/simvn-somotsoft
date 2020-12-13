@@ -1,0 +1,114 @@
+.company-info{
+    &__wrapper{
+        
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &__image{
+            img{
+                width: 100%;
+                margin: auto;
+            }
+        }
+        &__wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        &__icon{
+            margin-bottom: 20px;
+        }
+        &__title{
+            @extend .text-intro__heading;
+            margin-bottom: 20px;
+        }
+        &__content{
+            text-align: left;
+            color: $black;
+            @extend .text-intro__content;
+        }
+
+    }
+    @media screen and (min-width: 992px){
+        &__item{
+            &:nth-of-type(even){
+                flex-direction: column-reverse;
+                .company-info__item{
+                    &__wrapper{
+                        padding-top: 0px;
+                    }
+                }
+            }
+        }
+        
+     }
+}
+.testimonial{
+    margin-top: 10px;
+    &__item{
+        margin-bottom: 16.5px;
+        &__content{
+            background-color: $white-two;
+            &.col-12.col-lg-6{
+                padding-top: 27.5px;
+                padding-bottom: 27.5px;
+                padding-left: 41px;
+                padding-right: 41px;
+            }
+        }
+        &__image{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__title{
+            color: $deep-violet;
+            @extend .text-feedback__heading;
+        }
+        &__text{
+            margin-bottom: 12.5px;
+            color: $gunmetal;
+            @extend .text-feedback__content;
+        }
+        &__author{
+            color: $dark-peach-two;
+            @extend .text-feedback__caption;
+            &--small{
+                margin-bottom: 0px;
+                color: $gunmetal;
+                @extend .text-feedback__content;
+            }
+        }
+        &__breakline{
+            max-width: 27px;
+            position: relative;
+            border-top: solid 0.5px $deep-violet;
+            margin: 15px auto 7px 0px;
+            &::after{
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: 0px;
+                left: 19.5px;
+                width: 3px;
+                background-color: $deep-violet;
+            }
+        }
+    }
+    @media screen and (min-width: 992px){
+        &__item{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &:nth-of-type(odd){
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

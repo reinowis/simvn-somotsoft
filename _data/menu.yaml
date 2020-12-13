@@ -3,7 +3,7 @@
 - name: Giới thiệu
   id: about
 - name: Sản phẩm
-  id: products
+  id: category
 - name: Liên hệ
   id: contact
 - name: Tuyển dụng

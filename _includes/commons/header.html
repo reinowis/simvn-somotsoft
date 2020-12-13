@@ -1,54 +1,53 @@
 <!-- Header -->
-<header>
-  <div class="container header-headline">
-    <div class="d-flex justify-content-between header-headline__wrapper">
-      <div class="header-headline__item">
-        <span class="ws-nowrap">
-          <span class="header-headline__item__icon"><i class="fas fa-phone fa-flip-horizontal"></i></span> <span>+84 (28) 5413 3636</span>
-        </span>
+<header class="header">
+  <div class="header__headline">
+    <div class="container header__headline__wrapper">
+      <div class="header__headline__item">
+        <span class="header__headline__item__icon"><i class="fas fa-phone fa-flip-horizontal"></i></span> 
+        <span class="ws-nowrap">+84 (28) 5413 3636</span>
       </div>
-      <div class="header-headline__item">
-        <span class="header-headline__item__icon"><i class="fas fa-map-marker-alt"></i></span>
-        <div class="header-headline__item__address">
-          <span>Head Office: {{site.data.contact.address.head}} | Branch: {{site.data.contact.address.branch}}</span>
-          <span>Rep. Office: {{site.data.contact.address.rep}}</span>
+      <div class="header__headline__item flex-grow-1">
+        <span class="header__headline__item__icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div class="header__headline__item__address">
+          <p class="mb-0">Head Office: {{site.data.contact.address.head}} | Branch: {{site.data.contact.address.branch}}</p>
+          <p class="mb-0">Rep. Office: {{site.data.contact.address.rep}}</p>
         </div>
       </div>
-      <div class="header-headline__item">
-        <span class="header-headline__item__icon"><i class="fas fa-envelope"></i></span>
+      <div class="header__headline__item">
+        <span class="header__headline__item__icon"><i class="fas fa-envelope"></i></span>
         <span>info@simvn.biz</span>
-        <span class="header-headline__item__icon header-headline__item__like"><i class="far fa-heart"></i></span>
+        <span class="header__headline__item__icon header__headline__item__like"><i class="far fa-heart"></i></span>
       </div>
-      <div class="header-headline__item ws-nowrap">
+      <div class="header__headline__item ws-nowrap">
         <span>Ngôn ngữ</span>
-        <a href="#" class="header-headline__item__lang"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
-        <a href="#" class="header-headline__item__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__headline__item__icon--lang"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__headline__item__icon--lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
       </div>
     </div>
   </div>
-  <div class="container header-main">
-    <div class="d-flex justify-content-between header-main__wrapper">
-      <div class="header-main__item">
+  <div class="container header__main">
+    <div class="d-flex justify-content-between header__main__wrapper">
+      <div class="header__main__item">
         <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
       </div>
-      <div class="header-main__item flex-grow-1">
-        <div class="header-main__searchbar">
+      <div class="header__main__item flex-grow-1">
+        <div class="header__searchbar">
           <form>
-            <div class="input-group mb-3">
+            <div class="input-group header__searchbar__wrapper">
               <div class="input-group-prepend">
-                <select name="search-select" id="search-select" class="form-control">
+                <select name="search-select" id="search-select" class="form-control header__searchbar__select">
                   <option value="">Tất cả thư mục</option>
                 </select>
               </div>
-              <input type="text" class="form-control" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
+              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
             </div>
           </form>
           
 
         </div>
-        <div class="header-main__menu">
+        <div class="header__main__menu">
           <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none" id="mainNav">
               <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="fa fa-bars"></i>
@@ -64,36 +63,40 @@
                 </div>
               </div>
             </nav>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+            <nav class="header__menu">
+                <ul class="header__menu__wrapper">
                   {%- for item in site.data.menu -%}
-                  {% if item.id == 'products' %}
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <li class="header__menu__item  {% if item.id == 'category' or item.subcategories %}header__menu__item--dropdown{% endif %}">
+                    <a class="header__menu__item__text {% if item.id == layout.id %}header__menu__item__text--activated{% endif %}" href="#">
                       {{item.name}}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    {% if item.id == 'category' or item.subcategories %}
+                    <ul class="header__dropdown header__dropdown--lv1">
+                      {%- for item in site.data.categories -%}
+                      <li class="header__dropdown__item {% if item.subcategories %} header__dropdown__item--dropdown{% endif %}" >
+                        <a class="header__dropdown__item__text" href="#">{{item.name}}
+                          {% if item.subcategories %}
+                            <ul class="header__dropdown header__dropdown--lv2">
+                              {%- for item in item.subcategories -%}
+                              <li class="header__dropdown__item">
+                                <a href="#" class="header__dropdown__item__text">{{item.name}}</a>
+                              </li>
+                              {%- endfor -%}
+                            </ul>
+                          {% endif %}
+                        </a>
+                      </li>
+                      {%- endfor -%}
+                    </ul>
+                    {% endif %}
                   </li>
-                  {% else %}
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">{{item.name}}</a>
-                  </li>
-                  {% endif %}
-                  
                   {%- endfor -%}
-                  
                 </ul>
-              </div>
             </nav>
         </div>
       </div>
-      <div class="header-main__item">
-          <button class="btn btn-block">Tìm kiếm</button>
+      <div class="header__main__item">
+          <button class="btn btn-search ws-nowrap">Tìm kiếm</button>
       </div>
     </div>
   </div>

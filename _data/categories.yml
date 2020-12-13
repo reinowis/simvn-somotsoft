@@ -10,7 +10,11 @@
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-02.png 
+  image: assets/images/category-02.png
+  subcategories:
+    - name: Menu 1
+    - name: Menu 2
+    - name: Menu 3
 
 - name: KẸO & CHOCOLATE
   contact:

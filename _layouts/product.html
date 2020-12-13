@@ -1,6 +1,6 @@
 ---
 layout: default
-id: home
+id: product
 ---
 
 <!-- Homepage Banner -->
@@ -57,7 +57,7 @@ id: home
       </div>
     </div>
     
-    <div class="row company-info__wrapper">
+    <div class="row no-gutters company-info__wrapper">
         {%- for item in site.data.information -%}
         <div class="col-12 col-lg-4 company-info__item">
             <div class="company-info__item__image">
@@ -67,9 +67,6 @@ id: home
                 <div class="company-info__item__icon">
                     <img class="img-fluid" src="{{item.icon | relative_url}}" alt="{{item.name}}">
                 </div>
-                <h3 class="company-info__item__title {{item.style}}">
-                    {{item.name}}
-                </h3>
                 <div class="company-info__item__content">
                     <p>{{item.content}}</p>
                 </div>
@@ -110,15 +107,15 @@ id: home
     </div>
     {%- for item in site.data.testimonials -%}
     <div class="row no-gutters testimonial__item">
-        <div class="col-12 col-lg-6 testimonial__item__image">
-            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
-        </div>
         <div class="col-12 col-lg-6 testimonial__item__content">
             <h3 class="testimonial__item__title">{{item.title}}</h3>
             <h4 class="testimonial__item__author">{{item.author}}</h4>
+            <p class="testimonial__item__content">{{item.content}}</p>
             <hr class="testimonial__item__breakline"/>
-            <p class="testimonial__item__text">{{item.content}}</p>
             <p class="testimonial__item__author--small">{{item.author}}</p>
+        </div>
+        <div class="col-12 col-lg-6 testimonial__item__image">
+            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
         </div>
     </div>
     {%- endfor -%}

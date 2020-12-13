@@ -141,6 +141,39 @@
     text-align: center;
   }
   
+  .text-menu--activated {
+    font-family: SVN-Circular;
+    font-size: 8px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 9px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .text-dropdown {
+    font-family: SVN-Circular;
+    font-size: 8px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 25px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
+  .text-menu {
+    font-family: SVN-Circular;
+    font-size: 8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 9px;
+    letter-spacing: normal;
+    text-align: left;
+  }
+
   .text-feedback__content {
     font-family: SVN-Circular;
     font-size: 8px;
