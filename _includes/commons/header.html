@@ -27,8 +27,8 @@
       </div>
     </div>
   </div>
-  <div class="container header__main d-none d-lg-block">
-    <div class="d-flex justify-content-between header__main__wrapper">
+  <div class="container-fluid container-lg header__main">
+    <div class="d-none d-lg-flex justify-content-between header__main__wrapper">
       <div class="header__main__item">
         <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
       </div>
@@ -85,9 +85,7 @@
           <button class="btn btn-search ws-nowrap">Tìm kiếm</button>
       </div>
     </div>
-  </div>
-  <nav class="navbar navbar-expand-lg d-lg-none">
-    <div class="header__main">
+    <nav class="navbar header__main__wrapper header__main__wrapper--mobile d-lg-none">
       <div class="header__main__item">
         <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
       </div>
@@ -97,13 +95,39 @@
         </button>
       </div>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          {%- for item in site.data.menu -%}
-          <li class="nav-item">
-            <a class="nav-link" href="{{"/" | relative_url }}">{{item.name}}</a>
-          </li>
-          {%- endfor -%}
-        </ul>
+        <div class="header__main__menu">
+          <!-- Navigation -->
+            <nav class="header__menu header__menu--mobile">
+                <ul class="header__menu__wrapper">
+                  {%- for item in site.data.menu -%}
+                  <li class="header__menu__item  {% if item.id == 'category' or item.subcategories %}header__menu__item--dropdown{% endif %}">
+                    <a class="header__menu__item__text {% if item.id == layout.id %}header__menu__item__text--activated{% endif %}" href="#">
+                      {{item.name}}
+                    </a>
+                    {% if item.id == 'category' or item.subcategories %}
+                    <ul class="header__dropdown header__dropdown--lv1">
+                      {%- for item in site.data.categories -%}
+                      <li class="header__dropdown__item {% if item.subcategories %} header__dropdown__item--dropdown{% endif %}" >
+                        <a class="header__dropdown__item__text" href="#">{{item.name}}
+                          {% if item.subcategories %}
+                            <ul class="header__dropdown header__dropdown--lv2">
+                              {%- for item in item.subcategories -%}
+                              <li class="header__dropdown__item">
+                                <a href="#" class="header__dropdown__item__text">{{item.name}}</a>
+                              </li>
+                              {%- endfor -%}
+                            </ul>
+                          {% endif %}
+                        </a>
+                      </li>
+                      {%- endfor -%}
+                    </ul>
+                    {% endif %}
+                  </li>
+                  {%- endfor -%}
+                </ul>
+            </nav>
+        </div>
         <div class="header__searchbar">
           <form>
             <div class="input-group header__searchbar__wrapper">
@@ -119,6 +143,7 @@
 
         </div>
       </div>
-    </div>
   </nav>
+  </div>
+  
 </header>

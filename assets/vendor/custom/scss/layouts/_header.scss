@@ -1,5 +1,10 @@
 .header{
     background: $white;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    // position: sticky;
+    // top: 0px;
+    // z-index: 20;
     &__headline{
         border-bottom: solid 1px $very-light-pink-three;
         &__wrapper{
@@ -60,8 +65,15 @@
                 padding-right: 0px;
             }
         }
+        &__wrapper{
+            &--mobile{
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
     }
     &__menu{
+        margin-top: 6px;
         &__wrapper{
             display: flex;
             align-items: center;
@@ -99,7 +111,21 @@
                 }
             }
         }
-        
+        &--mobile{
+            .header__menu{
+                &__wrapper{
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            .header__dropdown{
+                position: relative;
+                border: 0px;
+                &__item{
+
+                }
+            }
+        }
     }
     &__dropdown{
         display: none;
@@ -170,9 +196,9 @@
             @extend .text-headline;
         }
     }
-//     &.is-sticky{
-//         position: sticky;
-//         top: 0px;
-//         z-index: 20;
-//     }
+    &.is-sticky{
+        position: sticky;
+        top: -1px;
+        z-index: 20;
+    }
 }
