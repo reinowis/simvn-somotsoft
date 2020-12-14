@@ -1,4 +1,5 @@
 <!-- Header -->
+<div style="height: 0px; width: 100%; opacity: 0;display: block;"></div>
 <header class="header">
   <div class="header__headline d-none d-lg-flex">
     <div class="container header__headline__wrapper">
@@ -17,20 +18,20 @@
         <span class="header__headline__item__icon"><i class="fas fa-envelope"></i></span>
         <span>info@simvn.biz</span>
         <a href="#"
-        ><span class="header__headline__item__icon header__headline__item__like"></span></a>
+        ><span class="header__headline__item__icon header__icon__like"></span></a>
         </span>
       </div>
       <div class="header__headline__item ws-nowrap">
         <span>Ngôn ngữ</span>
-        <a href="#" class="header__headline__item__icon header__headline__item__lang header__headline__item__lang--activated"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
-        <a href="#" class="header__headline__item__icon header__headline__item__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__icon__lang header__icon__lang--activated"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
+        <a href="#" class="header__headline__item__icon header__icon__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
       </div>
     </div>
   </div>
-  <div class="container-fluid container-lg header__main">
-    <div class="d-none d-lg-flex justify-content-between header__main__wrapper">
+  <div class="container-lg header__main d-none d-lg-block">
+    <div class="d-flex justify-content-between header__main__wrapper">
       <div class="header__main__item">
-        <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+        <img class="img-fluid header__logo" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
       </div>
       <div class="header__main__item flex-grow-1">
         <div class="header__searchbar">
@@ -41,7 +42,7 @@
                   <option value="">Tất cả thư mục</option>
                 </select>
               </div>
-              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
+              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text"  placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
             </div>
           </form>
           
@@ -60,12 +61,12 @@
                     <ul class="header__dropdown header__dropdown--lv1">
                       {%- for item in site.data.categories -%}
                       <li class="header__dropdown__item {% if item.subcategories %} header__dropdown__item--dropdown{% endif %}" >
-                        <a class="header__dropdown__item__text" href="#">{{item.name}}
+                        <a class="header__dropdown__item__text" href="#">{{item.name | capitalize }}
                           {% if item.subcategories %}
                             <ul class="header__dropdown header__dropdown--lv2">
                               {%- for item in item.subcategories -%}
                               <li class="header__dropdown__item">
-                                <a href="#" class="header__dropdown__item__text">{{item.name}}</a>
+                                <a href="#" class="header__dropdown__item__text">{{item.name | capitalize }}</a>
                               </li>
                               {%- endfor -%}
                             </ul>
@@ -82,53 +83,62 @@
         </div>
       </div>
       <div class="header__main__item">
-          <button class="btn btn-search ws-nowrap">Tìm kiếm</button>
+          <button class="btn btn-search ws-nowrap" title="Tìm kiếm">Tìm kiếm</button>
       </div>
     </div>
-    <nav class="navbar header__main__wrapper header__main__wrapper--mobile d-lg-none">
-      <div class="header__main__item">
-        <img class="img img-fluid" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+  </div>
+  <div class="container-fluid header__mobile d-lg-none">
+    <div class="header__mobile">
+      <div class="header__mobile__wrapper">
+        <div class="header__mobile__item">
+          <img class="img-fluid header__logo" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+        </div>
+        <div class="header__mobile__item">
+          <button class="navbar-toggler header__mobile__toggle" type="button" data-toggle="collapse" data-target="#header-mobile-dropdown" aria-controls="header-mobile-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
       </div>
-      <div class="header__main__item">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <div class="header__main__menu">
-          <!-- Navigation -->
-            <nav class="header__menu header__menu--mobile">
-                <ul class="header__menu__wrapper">
-                  {%- for item in site.data.menu -%}
-                  <li class="header__menu__item  {% if item.id == 'category' or item.subcategories %}header__menu__item--dropdown{% endif %}">
-                    <a class="header__menu__item__text {% if item.id == layout.id %}header__menu__item__text--activated{% endif %}" href="#">
-                      {{item.name}}
-                    </a>
-                    {% if item.id == 'category' or item.subcategories %}
-                    <ul class="header__dropdown header__dropdown--lv1">
-                      {%- for item in site.data.categories -%}
-                      <li class="header__dropdown__item {% if item.subcategories %} header__dropdown__item--dropdown{% endif %}" >
-                        <a class="header__dropdown__item__text" href="#">{{item.name}}
-                          {% if item.subcategories %}
-                            <ul class="header__dropdown header__dropdown--lv2">
-                              {%- for item in item.subcategories -%}
-                              <li class="header__dropdown__item">
-                                <a href="#" class="header__dropdown__item__text">{{item.name}}</a>
-                              </li>
-                              {%- endfor -%}
-                            </ul>
-                          {% endif %}
-                        </a>
+      <div class="collapse navbar-collapse header__mobile__collapse" id="header-mobile-dropdown">
+        <!-- Header Navigation -->
+        <nav class="header__mobile__menu">
+            <ul class="header__mobile__menu__wrapper">
+              {%- for item in site.data.menu -%}
+              {%- assign firstIndex = forloop.index -%}
+              <li class="header__mobile__menu__item  {% if item.id == 'category' or item.subcategories %}header__mobile__menu__item--dropdown{% endif %}">
+                {% if item.id == 'category' or item.subcategories %}
+                <a class="header__mobile__menu__item__text {% if item.id == layout.id %}header__mobile__menu__item__text--activated{% endif %}" href="" data-toggle="collapse" data-target="#dropdown-mobile-{{firstIndex}}" aria-controls="dropdown-mobile-{{firstIndex}}" aria-expanded="false" aria-label="Dropdown Menu">
+                  {{item.name}}
+                </a>
+                <ul class="header__mobile__dropdown collapse" id="dropdown-mobile-{{firstIndex}}">
+                  {%- for item in site.data.categories -%}
+                  {%- assign secondIndex = forloop.index -%}
+                  <li class="header__mobile__dropdown__item {% if item.subcategories %} header__mobile__dropdown__item--dropdown{% endif %}" >
+                    {% if item.subcategories %}
+                    <a class="header__mobile__dropdown__item__text" href="" data-toggle="collapse" data-target="#dropdown-mobile-{{firstIndex}}-{{secondIndex}}" aria-controls="dropdown-mobile-{{firstIndex}}-{{secondIndex}}" aria-expanded="false" aria-label="Dropdown Menu">{{item.name | capitalize }}</a>
+                    <ul class="header__mobile__dropdown collapse" id="dropdown-mobile-{{firstIndex}}-{{secondIndex}}">
+                      {%- for item in item.subcategories -%}
+                      <li class="header__mobile__dropdown__item">
+                        <a href="#" class="header__mobile__dropdown__item__text">{{item.name | capitalize }}</a>
                       </li>
                       {%- endfor -%}
                     </ul>
+                    {% else %}
+                    <a class="header__mobile__dropdown__item__text" href="#">{{item.name | capitalize }}</a>
                     {% endif %}
                   </li>
                   {%- endfor -%}
                 </ul>
-            </nav>
-        </div>
-        <div class="header__searchbar">
+                {% else %}
+                <a class="header__mobile__menu__item__text {% if item.id == layout.id %}header__mobile__menu__item__text--activated{% endif %}" href="#">
+                  {{item.name}}
+                </a>
+                {% endif %}
+              </li>
+              {%- endfor -%}
+            </ul>
+        </nav>
+        <div class="header__searchbar header__mobile__searchbar">
           <form>
             <div class="input-group header__searchbar__wrapper">
               <div class="input-group-prepend">
@@ -136,14 +146,72 @@
                   <option value="">Tất cả thư mục</option>
                 </select>
               </div>
-              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text" aria-describedby="basic-addon3" placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
+              <input type="text" class="form-control header__searchbar__input" name="search-text" id="search-text"  placeholder="Vd: Chất ổn định bánh Baker 999; Bột nổi Baker 999;...">
             </div>
           </form>
           
 
         </div>
+        <div class="header__mobile__content">
+          <div class="header__mobile__content__item">
+            <span class="header__mobile__content__item__text">Yêu thích</span>
+            <a href="#"
+            ><span class="header__mobile__content__item__icon header__icon__like"></span></a>
+            </span>
+          </div>
+          <div class="header__mobile__content__item">
+            <span class="header__mobile__content__item__text">Ngôn ngữ</span>
+            <a href="#" class="header__mobile__content__item__icon header__icon__lang header__icon__lang--activated"><img src="{{"/assets/images/vietnam.svg" | relative_url}}" alt=""></a>
+            <a href="#" class="header__mobile__content__item__icon header__icon__lang"><img src="{{"/assets/images/united-states.svg" | relative_url}}" alt=""></a>
+          </div>
+        </div>
+        <div class="header__mobile__info">
+          <h3 class="header__mobile__heading">Thông tin liên hệ chung</h3>
+          <hr class="header__mobile__breakline"/>
+          <ul class="header__mobile__list">
+            <li class="header__mobile__list__item">
+              <span class="header__mobile__list__item__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span class="header__mobile__list__item__text">
+                Head Office: {{site.data.contact.address.head}}
+              </span>
+            </li>
+            <li class="header__mobile__list__item">
+              <span class="header__mobile__list__item__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span class="header__mobile__list__item__text">
+                Rep. Office: {{site.data.contact.address.rep}}
+              </span>
+            </li>
+            <li class="header__mobile__list__item">
+              <span class="header__mobile__list__item__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span class="header__mobile__list__item__text">
+                Branch: {{site.data.contact.address.branch}}
+              </span>
+            </li>
+            <li class="header__mobile__list__item">
+              <span class="header__mobile__list__item__icon">
+                <i class="fas fa-phone fa-flip-horizontal"></i>
+              </span>
+              <span class="header__mobile__list__item__text">
+                Điện thoại: {{site.data.contact.phone}}
+              </span>
+            </li>
+            <li class="header__mobile__list__item">
+              <span class="header__mobile__list__item__icon">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="header__mobile__list__item__text">
+                Email: {{site.data.contact.email}}
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
-  </nav>
+    </div>
   </div>
-  
 </header>

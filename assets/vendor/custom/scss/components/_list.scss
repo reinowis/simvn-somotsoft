@@ -10,8 +10,11 @@
             padding-left: 3.25px;
             padding-right: 3.25px;
             &__image{
-                position: relative;
-                width: 100%;
+                position: absolute;
+                top: 0px;
+                left: 3.25px;
+                width: calc(100% - 6.5px);
+                height: 100%;
                 &::before{
                     bottom: 0;
                     content: "";
@@ -19,22 +22,18 @@
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    z-index: 1;
+                    z-index: 0;
                     background: linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
                 }
                 img{
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
                     object-position: center center;
                 }
             }
             &__content{
-                position: absolute;
-                z-index: 2;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
+                position: relative;
                 padding: 24.5px 36px;
                 text-align: center;
                 display: flex;
