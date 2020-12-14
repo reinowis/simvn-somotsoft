@@ -67,3 +67,80 @@
         }
     }
 }
+.category-list{
+    &__item{
+        position: relative;
+        border: solid 1px $dark-peach-two;
+        margin-bottom: 10px;
+        background-color: $dark-peach-two;
+        &__wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        &__image{
+            position: relative;
+            flex: 0 0 50%;
+            max-width: 50%;
+            height: 20vw;
+            overflow: hidden;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background-image: linear-gradient(to left, $dark-peach-two 5%, rgba(255, 255, 255, 0) 95%);
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 50%;
+            max-width: 50%;
+            background-color: $dark-peach-two;
+            position: relative;
+            // padding: 8.5px 11px;
+            text-align: center;
+        }
+        &__title{
+            @extend .text-category--grid__heading;
+            color: $white;
+            margin-bottom: 0px;
+            text-decoration: none;
+            &:hover, &:focus{
+                text-decoration: none;
+            }
+        }
+        &:nth-of-type(even){
+            background-color: $pale-grey;
+            .category-list__item{
+                
+                &__wrapper{
+                    flex-direction: row-reverse;
+                }
+                &__image{
+                    &::after{
+                        background-image: linear-gradient(to right, $pale-grey 5%, rgba(255, 255, 255, 0) 95%);
+                    }
+                }
+                &__content{
+                    background-color: $pale-grey;;
+                }
+                &__title{
+                    color: $dark-peach-two;
+                }
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ id: home
       </div>
     </div>
     
-    <div class="row no-gutters category-grid__wrapper">
+    <div class="row no-gutters category-grid__wrapper d-none d-lg-flex">
       {%- for item in site.data.categories -%}
       <div class="col-12 col-sm-6 col-lg-3 category-grid__item">
           <div class="category-grid__item__image">
@@ -40,7 +40,20 @@ id: home
           </div>
       </div>
       {%- endfor -%}
-      
+    </div>
+    <div class="row no-gutters d-flex d-lg-none category-list__wrapper">
+        {%- for item in site.data.categories -%}
+        <a href="onclick:showCategoryPopup();" class="col-12 category-list__item">
+            <div class="category-list__item__wrapper">
+                <div class="category-list__item__image">
+                    <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+                </div>
+                <div class="category-list__item__content">
+                    <h4 class="category-list__item__title">{{item.name}}</h4>
+                </div>
+            </div>
+        </a>
+        {%- endfor -%}
     </div>
 </section>  
 <!-- Company Information -->

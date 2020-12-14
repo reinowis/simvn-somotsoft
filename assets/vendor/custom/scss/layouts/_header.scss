@@ -175,11 +175,6 @@
             @extend .text-headline;
         }
     }
-    &.is-sticky{
-        position: sticky;
-        top: -1px;
-        z-index: 20;
-    }
     // Header on Mobile/ Tablet
     &__mobile{
         padding-left: 0px;
@@ -201,8 +196,8 @@
             padding: 17.5px;
             overflow: auto;
             box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.73);
-            transition: ease-in-out;
-            transition-duration: 0.5s;
+            // transition: ease-in-out;
+            // transition-duration: 0.5s;
             height: 0px;
             &.collapse.show{
                 height: auto;

@@ -36,12 +36,12 @@ $(document).ready(function(){
   var observer = new IntersectionObserver(function(e){
       for (let i = 0; i < e.length; i++){
         if (e[i].isIntersecting){
-          $("body").append("<div class='header__mobile__backdrop'></div>");
           $("body").toggleClass('is-backdrop', true);
+          $("body").append("<div class='header__mobile__backdrop'></div>");
         }
         else{
-          $(".header__mobile__backdrop").remove();
           $("body").toggleClass('is-backdrop', false);
+          $(".header__mobile__backdrop").remove();
         }
       }
     }, {threshold: [0], rootMargin: '-50px 0px -55%'});
