@@ -85,6 +85,11 @@ id: home
             </div>
             {%- endfor -%}
         </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-view">Xem thêm</button>
+            </div>
+        </div>
     </div>
 </section>  
 <!-- Partners Logo -->
@@ -101,7 +106,7 @@ id: home
         </div>
         <div class="row no-gutters partner-slides__wrapper">
             <div class="col-12">
-                <div class="owl-carousel owl-theme" data-slides="4" data-slides-mobile="2" data-nav="true" data-loop="true">
+                <div class="owl-carousel owl-theme" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true">
                     {%- for item in site.data.partners -%}
                         <div class="partner-slides__item">
                             <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">

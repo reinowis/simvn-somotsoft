@@ -3,6 +3,7 @@
     padding-top: 11.5px;
     .footer{
         &__wrapper{
+            flex-wrap: nowrap;
             margin-bottom: 19px;
         }
         &__info{

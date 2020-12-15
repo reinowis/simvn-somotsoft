@@ -11,10 +11,10 @@ body{
     }
 }
 .section{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     &__title{
         color: $deep-violet;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         text-transform: uppercase;
         @extend .text-section__heading;
     }
