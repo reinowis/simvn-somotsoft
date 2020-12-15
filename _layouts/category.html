@@ -11,63 +11,105 @@ filter:
 <!-- Banner -->
 {%- include commons/banner.html showtext=true secondarytext="NGUYÊN LIỆU ĐÍCH THỰC" primarytext="CHO SỨC KHOẺ KHÁCH HÀNG" image="/assets/images/banner-02.png"-%}
 <!-- Path -->
-<div class="container category-path">
+<section class="section container category-path">
   <div class="category-path__wrapper">
     <div class="category-path__item">
       <span class="category-path__content">SẢN PHẨM / SỮA, KEM, YOGURT</span>
     </div>
-  </div>
-</div>
-<!-- Filter -->
-<div class="container category-filter">
-    <!-- <div class="dropdown category-filter__dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tất cả thư mục
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        {%- for item in layout.filter -%}
-        <li><a href="#" onclick="">{{item}}</a></li>  
-        {%- endfor -%}
-      </ul>
-    </div> -->
-    <form>
-      <select name="category-filter" id="category-filter" class="form-control select-customized category-filter__select">
-        <option value="">Tất cả thư mục</option>
-        {%- for item in layout.filter -%}
-        <option value="{{forloop.index}}">{{item}}</option>  
-        {%- endfor -%}
-      </select>
-    </form>
-</div>
-<!-- Company Information -->
-<section class="container section product-list">
-  <div class="row no-gutters">
-    <div class="col-12">
-          <h1 class="section__title">SỮA, KEM, YOGURT</h1>
+    <!-- Filter on Mobile -->
+    <div class="category-path__item d-block d-lg-none">
+      <div class="category-filter--mobile">
+        <form>
+          <select name="category-filter" class="form-control select-customized category-filter__select">
+            <option value="">Tất cả thư mục</option>
+            {%- for item in layout.filter -%}
+            <option value="{{forloop.index}}">{{item}}</option>  
+            {%- endfor -%}
+          </select>
+        </form>
+      </div>
+      
     </div>
   </div>
+</section>
+<!-- Categry Header -->
+<section class="container section category-header mb-0">
+  <div class="category-header__wrapper d-flex align-items-center justify-content-around">
+    <!-- Filter on Web -->
+    <div class="category-header__item flex-grow-1 d-none d-lg-block">
+      <div class="category-filter">
+        <form>
+          <select name="category-filter" class="form-control select-customized category-filter__select">
+            <option value="">Tất cả thư mục</option>
+            {%- for item in layout.filter -%}
+            <option value="{{forloop.index}}">{{item}}</option>  
+            {%- endfor -%}
+          </select>
+        </form>
+      </div>
+    </div>
+    <div class="category-header__item flex-grow-1">
+      <h1 class="section__title">SỮA, KEM, YOGURT</h1>
+    </div>
+    <!-- A reserved fake block for centering the heading text-->
+    <div class="category-header__item flex-grow-1 d-none d-lg-block"></div>
+  </div>
+  <div class="row d-flex d-lg-block">
+    <div class="col-12">
+      <div class="section__content">
+        <p>Kem sữa chua hay còn gọi là sữa chua đông lạnh (Frozen yogurt) là một món tráng miệng đông lạnh được làm từ sữa chua và đôi khi là các sản phẩm từ sữa (chế phẩm sữa) và không phải sữa khác.</p>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- Products List -->
+<section class="container section product-list">  
   <div class="row  product-list__wrapper">
     {%- for item in site.data.products -%}
-      <div class="col-12 col-sm-4 col-lg-2 product-list__item">
+      <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-list__item">
           <div class="product-list__item__wrapper">
             <div class="product-list__item__image">
               <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
             </div>
-            <h3 class="product-list__item__title">{{item.name}}</h3>
-            <div class="product-list__item__footer">
-              <button class="btn btn-view">
-                Xem thêm
-              </button>
-              <div class="product-list__item__action">
-                <a href="#" class="product-list__item__action__icon">
-                  <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="#" class="product-list__item__action__icon">
-                  <i class="fas fa-heart"></i>
-                </a>
+            <div class="product-list__item__content">
+              <h3 class="product-list__item__title">{{item.name}}</h3>
+              <div class="product-list__item__footer">
+                <button class="btn btn-view">
+                  Xem thêm
+                </button>
+                <div class="product-list__item__action">
+                  <a href="#" class="product-list__item__action__icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </a>
+                  <a href="#" class="product-list__item__action__icon {% if forloop.index == 1%}product-list__item__action__icon--activated{%endif%}">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
       </div>
     {%- endfor -%}
+  </div>
+  <div class="row no-gutters category-paging">
+    <div class="paging-list m-auto">
+      <ul class="paging-list__wrapper">
+        <li class="paging-list__item paging-list__item--activated">
+          <a href="#" class="paging-list__item__text" onclick="return false;">1</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">2</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">3</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">...</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">11</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

@@ -1,0 +1,14 @@
+.category-path{
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__content{
+        color: $deep-violet;
+        @extend .text-path;
+    }
+}
+.category-paging{
+    margin-top: 28.5px;
+}

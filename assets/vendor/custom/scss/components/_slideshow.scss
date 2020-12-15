@@ -56,6 +56,7 @@
         }
     }
     &--banner{
+        max-height: 50vw;
         .owl-dots{
             position: absolute;
             z-index: 2;

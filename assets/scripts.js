@@ -49,5 +49,10 @@ $(document).ready(function(){
     observer.observe(stickyElem[i]);
   }
   // Init the custom select
-  $(".select-customized").selectmenu();
+  $(".select-customized").selectmenu({
+    classes: {
+      "ui-selectmenu-button" : "select-customized__button",
+      "ui-selectmenu-menu": "select-customized__dropdown"
+    }
+  });
 });

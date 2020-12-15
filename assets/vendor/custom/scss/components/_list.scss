@@ -173,18 +173,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             border-radius: 3px;
             box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.19);
             background-color: $white;
             padding: 30px 9px;
+            height: 100%;
         }
         &__image{
+            width: 100%;
             img{
                 width: 100%;
-                // max-height: 91px;
-                // object-fit: cover;
-                // object-position: center center;
             }
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
         }
         &__title{
             margin-top: 12.5px;
@@ -202,8 +208,73 @@
             font-size: 10px;
             color: $very-light-pink;
             &__icon{
-                padding: auto 7.5px;
+                padding: 0px 7.5px;
+                font-size: 16px;
                 color: $very-light-pink;
+                &--activated{
+                    color: $dark-peach-two;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 992px){
+        &__item{
+            &__wrapper{
+                display: flex;
+                flex-direction: row;
+                padding: 6px 7px;
+            }
+            &__content{
+                flex-grow: 1;
+                align-items: flex-start;
+                padding-left: 5px;
+                height: 100%;
+            }
+            &__footer{
+                display: flex;
+                flex: row;
+            }
+            &__image{
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+        }
+    }
+}
+.paging-list{
+    &__wrapper{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 11.5px;
+        border-radius: 999px;
+        border: solid 1px $deep-violet;
+        width: auto;
+
+    }
+    &__item{
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        margin: auto 4px;
+        &__text{
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: $black;
+            line-height: 16px;
+            text-align: center;
+            @extend .text-select-box;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        &--activated{
+            background-color: $deep-violet;
+            .paging-list__item__text{
+                color: $white;
             }
         }
     }
