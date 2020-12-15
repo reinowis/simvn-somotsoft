@@ -19,6 +19,7 @@
             width: fit-content;
             @extend .text-footer__heading;
             padding-bottom: 3px;
+            padding-right: 10px;
             border-bottom: solid 2px $dark-peach-two;
         }
         &__list{

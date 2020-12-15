@@ -1,6 +1,7 @@
 .company-info{
+    position: relative;
     &__wrapper{
-        
+        z-index: 1;
     }
     &__item{
         display: flex;
@@ -39,6 +40,26 @@
         }
 
     }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 82px;
+        height: 258px;
+        top: -234px;
+        left: -15px;
+        background-image: url(/assets/images/background-01.png);
+        z-index: -1;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 82px;
+        height: 258px;
+        top: calc(100% - 234px);
+        left: calc(100% - 82px);
+        background-image: url(/assets/images/background-01.png);
+        z-index: -1;
+    }
     @media screen and (min-width: 992px){
         &__item{
             &:nth-of-type(even){
@@ -53,6 +74,23 @@
         }
         
      }
+    @media screen and (max-width: 991px){
+        &__wrapper{
+            display: block;
+        }
+        &__item{
+            &__image{
+                img{
+                    max-height: 50vw;
+                    object-position: top center;
+                }
+            }
+        }
+        &::after{
+            top: -96px;
+        }
+    } 
+    
 }
 .testimonial{
     margin-top: 10px;
@@ -63,8 +101,10 @@
             &.col-12.col-lg-6{
                 padding-top: 27.5px;
                 padding-bottom: 27.5px;
-                padding-left: 41px;
-                padding-right: 41px;
+                @media screen and (min-width: 992px){
+                    padding-left: 41px;
+                    padding-right: 41px;
+                }
             }
         }
         &__image{
@@ -118,5 +158,18 @@
                 flex-direction: row-reverse;
             }
         }
+    }
+}
+.partner-slides{
+    position: relative;
+    margin-bottom: 10vw;
+    &::after{
+        content: '';
+        width: 100%;
+        height: 10vw;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        background-image: url(/assets/images/background-02.png);
     }
 }

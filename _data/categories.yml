@@ -35,39 +35,53 @@
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-01.png
+  image: assets/images/category-05.png
 
 - name: THỊT & HẢI SẢN CHẾ BIẾN
   contact:
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-02.png 
+  image: assets/images/category-06.png 
 
 - name: BỘT MÌ & CÁC LOẠI BỘT TRỘN SẴN
   contact:
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-03.png 
+  image: assets/images/category-07.png 
+
+- name: Dầu ăn & margarine
+  contact:
+   name: Mr. Nguyen Van A
+   phone: 0909 123 123
+   email: sua.kem.yogurt@sim.vn
+  image: assets/images/category-08.png
 
 - name: Thực phẩm chức năng & dược phẩm
   contact:
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-04.png
+  image: assets/images/category-09.png
 
 - name: Hoá chất
   contact:
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-01.png
+  image: assets/images/category-10.png 
 
-- name: Hoá chất
+- name: Thức ăn gia súc
   contact:
    name: Mr. Nguyen Van A
    phone: 0909 123 123
    email: sua.kem.yogurt@sim.vn
-  image: assets/images/category-02.png 
+  image: assets/images/category-11.png 
+
+- name: SẢN PHẨM KHÁC
+  contact:
+   name: Mr. Nguyen Van A
+   phone: 0909 123 123
+   email: sua.kem.yogurt@sim.vn
+  image: assets/images/category-12.png 
