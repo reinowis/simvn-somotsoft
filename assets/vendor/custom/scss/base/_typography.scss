@@ -1,3 +1,13 @@
+.text-banner {
+  font-family: SVN-Circular;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+}
+
 .text-feedback__heading {
     font-family: iCielFester;
     font-size: 23px;
@@ -227,3 +237,23 @@
     letter-spacing: 0.48px;
     text-align: left;
   }
+  .text-path {
+    font-family: iCielFester;
+    font-size: 8px;
+    font-weight: bold;
+    font-stretch: semi-condensed;
+    font-style: normal;
+    letter-spacing: 1.56;
+    text-align: left;
+  }
+  .text-product-list {
+    font-family: SVN-Circular;
+    font-size: 8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  

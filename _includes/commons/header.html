@@ -61,7 +61,7 @@
                     <ul class="header__dropdown header__dropdown--lv1">
                       {%- for item in site.data.categories -%}
                       <li class="header__dropdown__item {% if item.subcategories %} header__dropdown__item--dropdown{% endif %}" >
-                        <a class="header__dropdown__item__text" href="#">{{item.name | capitalize }}
+                        <a class="header__dropdown__item__text" href="/category.html">{{item.name | capitalize }}
                           {% if item.subcategories %}
                             <ul class="header__dropdown header__dropdown--lv2">
                               {%- for item in item.subcategories -%}

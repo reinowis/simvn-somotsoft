@@ -48,4 +48,6 @@ $(document).ready(function(){
   for (let i = 0; i < stickyElem.length; i++){
     observer.observe(stickyElem[i]);
   }
+  // Init the custom select
+  $(".select-customized").selectmenu();
 });

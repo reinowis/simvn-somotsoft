@@ -1,0 +1,48 @@
+- name: Caramel Chocolate
+  liked: true
+  star: 3
+  image: /assets/images/product-01.png
+- name: Flavoured and Coloured Compound - Toffee
+  liked: true
+  star: 3
+  image: /assets/images/product-02.png
+- name: Milk Chocolate compound
+  liked: true
+  star: 3
+  image: /assets/images/product-03.png
+- name: Dark Chocolate
+  liked: true
+  star: 3
+  image: /assets/images/product-04.png
+- name: Dark Chocolate Compound
+  liked: true
+  star: 3
+  image: /assets/images/product-05.png
+- name: Dark Chocolate Compound Chips
+  liked: true
+  star: 3
+  image: /assets/images/product-06.png
+- name: Milk Chocolate Compound
+  liked: true
+  star: 3
+  image: /assets/images/product-07.png
+- name: Twin Chocolate Compound
+  liked: true
+  star: 3
+  image: /assets/images/product-08.png
+- name:  White Compound 
+  liked: true
+  star: 3
+  image: /assets/images/product-09.png
+- name: High Fructose Corn Syrup-55
+  liked: true
+  star: 3
+  image: /assets/images/product-10.png
+- name: Cocoa Powder 200
+  liked: true
+  star: 3
+  image: /assets/images/product-11.png
+- name: Hạnh nhân mảnh không vỏ rang
+  liked: true
+  star: 3
+  image: /assets/images/product-12.png

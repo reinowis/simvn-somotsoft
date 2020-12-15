@@ -1,14 +1,24 @@
 <!-- Banner -->
-<section class="container-fluid">
-  <div class="owl-carousel owl-theme" data-slides="1" data-nav="false" data-dots="true">
-    <div> 
-      <img src="{{"/assets/images/homepage-banner.png" | relative_url}}" alt="Homepage Banner">
+<section class="container-fluid section p-0 banner-main">
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="owl-carousel owl-theme owl-carousel--banner {% if include.showtext %}owl-carousel--banner--text{% endif %}" data-slides="1" data-dots="true" data-nav="false">
+        {%- for item in (1..4) -%}
+        <div class="owl-carousel__item"> 
+            {%- if include.showtext -%}
+            <div class="owl-carousel__item__content">
+              <div class="owl-carousel__item__content__item">
+                <h2 class="owl-carousel__item__heading owl-carousel__item__heading--secondary">{{include.secondarytext}}</h2>
+                <h2 class="owl-carousel__item__heading owl-carousel__item__heading--primary">{{include.primarytext}}</h2>
+              </div>
+            </div>
+            {%- endif -%}
+          <div class="owl-carousel__item__image">
+            <img src="{{include.image | relative_url}}" alt="Homepage Banner">
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
     </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
   </div>
 </section>
