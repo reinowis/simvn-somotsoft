@@ -190,6 +190,22 @@
                 width: 100%;
             }
         }
+        &__review{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 10px;
+            &__star{
+                margin: 0px 2px;
+                font-size: 10px;
+                color: $dark-yellow;
+            }
+            &__text{
+                margin: 0px 5px;
+                color: $very-light-pink;
+                @extend .text-product-detail__caption;
+            }
+        }
         &__content{
             display: flex;
             flex-direction: column;
@@ -213,7 +229,7 @@
             font-size: 10px;
             color: $very-light-pink;
             &__icon{
-                padding: 0px 7.5px;
+                padding: 0px 1.5px;
                 font-size: 16px;
                 color: $very-light-pink;
                 &:hover, &--activated{
@@ -275,12 +291,52 @@
             @extend .text-select-box;
             &:hover{
                 text-decoration: none;
+                color: $deep-violet;
             }
         }
         &--activated{
             background-color: $deep-violet;
             .paging-list__item__text{
                 color: $white;
+            }
+        }
+    }
+}
+.list-category{
+    &__wrapper{
+        border: solid 1px $deep-violet;
+        border-radius: 5.5px;
+        background-color: $white;
+        padding-left: 0px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        list-style-type: decimal;
+    }
+    &__heading{
+        color: $deep-violet;
+        padding: 8px 5px;
+        margin: 0px;
+        @extend .text-list-category__heading;
+    }
+    &__item{
+        list-style-position: inside;
+        padding: 7.5px 6.5px;
+        text-transform: capitalize;
+        color: $eggplant;
+        position: relative;
+        white-space: nowrap;
+        @extend .text-list-category__content;
+        &__text{
+            text-transform: capitalize;
+            color: $eggplant;
+            white-space: nowrap;
+        }
+        &:hover, &--activated{
+            background-color: $deep-violet;
+            color: $white;
+            .list-category__item__text{
+                color: $white;
+                text-decoration: none;
             }
         }
     }

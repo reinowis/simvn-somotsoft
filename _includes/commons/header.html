@@ -31,8 +31,8 @@
   <div class="container-lg header__main d-none d-lg-block">
     <div class="d-flex justify-content-between header__main__wrapper">
       <div class="header__main__item">
-        <a href="index.html">
-          <img class="img-fluid header__logo" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+        <a href='{{"index.html"|relative_url}}'>
+          <img class="img-fluid header__logo" src='{{"/assets/images/logo.svg" | relative_url}}' alt="Logo">
         </a>
       </div>
       <div class="header__main__item flex-grow-1">
@@ -93,7 +93,9 @@
     <div class="header__mobile">
       <div class="header__mobile__wrapper">
         <div class="header__mobile__item">
-          <img class="img-fluid header__logo" src="{{"/assets/images/logo.svg" | relative_url}}" alt="Logo">
+          <a href='{{"index.html"|relative_url}}'>
+            <img class="img-fluid header__logo" src='{{"/assets/images/logo.svg" | relative_url}}' alt="Logo">
+          </a>
         </div>
         <div class="header__mobile__item">
           <button class="navbar-toggler header__mobile__toggle" type="button" data-toggle="collapse" data-target="#header-mobile-dropdown" aria-controls="header-mobile-dropdown" aria-expanded="false" aria-label="Toggle navigation">

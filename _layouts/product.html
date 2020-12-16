@@ -1,6 +1,24 @@
 ---
 layout: default
 id: product
+product:
+  title: DARK CHOCOLATE COMPOUND
+  code: SLD- 2501-SB
+  content:
+    - "Giới thiệu tóm tắt: Dạng rắn, màu nâu đen, mùi vị đặc trưng của chocolate"
+    - "Ứng dụng: Được sử dụng rộng rãi trong chế biến và trang trí bánh kẹo, thực phẩm"
+    - "Quy cách đóng gói: Thùng 18 - 25kg"
+    - "Xuất xứ: Singapore"
+  contact:
+    name: Mr. Nguyen Van A
+    email: sua.kem.yogurt@sim.vn
+    phone: 0909 123 123
+  image: /assets/images/thumbnail-00.png  
+  thumbnails:
+    - /assets/images/thumbnail-01.png
+    - /assets/images/thumbnail-02.png
+    - /assets/images/thumbnail-03.png
+    - /assets/images/thumbnail-04.png
 ---
 
 <!-- Banner -->
@@ -9,102 +27,149 @@ id: product
 <section class="section container category-path">
   <div class="category-path__wrapper">
     <div class="category-path__item">
-      <span class="category-path__content">SẢN PHẨM / SỮA, KEM, YOGURT</span>
+      <a href='{{"category.html" | relative_url}}' class="category-path__content">SẢN PHẨM / SỮA, KEM, YOGURT / DARK CHOCOLATE COMPOUND SLD- 2501-SB</a>
     </div>
-    <!-- Filter on Mobile -->
-    <div class="category-path__item d-block d-lg-none">
-      <div class="category-filter--mobile">
-        <form>
-          <select name="category-filter" class="form-control select-customized category-filter__select">
-            <option value="">Tất cả thư mục</option>
-            {%- for item in layout.filter -%}
-            <option value="{{forloop.index}}">{{item}}</option>  
-            {%- endfor -%}
-          </select>
-        </form>
+  </div>
+</section>
+<!-- Product Detail -->
+<section class="section container product-detail">
+  <div class="product-detail__wrapper">
+    <div class="product-detail__item product-detail__gallery flex-grow-1">
+      <div class="product-detail__image">
+        <a href="#" class="img-zoom">
+          <img src='{{layout.product.image | relative_url}}' alt="{{layout.product.title}}" class="img-fluid">
+        </a>
+      </div>
+      <ul class="product-detail__thumbnails">
+        {%- for item in  layout.product.thumbnails-%}
+        {%- if forloop.index <= 4 -%}
+        <li class="product-detail__thumbnails__item">
+          <a href="#">
+            <img src="{{item | relative_url}}" alt="" class="img-fluid product-detail__thumbnails__item__image">
+            {%- if forloop.index ==4 -%}
+              <div class="product-detail__thumbnails__item__text">
+                <span>+ 3</span>
+              </div>  
+            {%- endif -%}
+          </a>
+        </li>
+        {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="product-detail__item product-detail__content flex-grow-1">
+      <div class="product-detail__heading">
+        <h1 class="product-detail__title">{{layout.product.title}}</h1>
+        <a href="#" class="product-detail__favorite">
+          <span class="fa-stack fa-2x">
+            <i class="far fa-circle fa-stack-2x"></i>
+            <i class="far fa-heart fa-stack-1x"></i>
+          </span>
+        </a>
       </div>
       
+      <hr class="product-detail__breakline"/>
+      <p class="product-detail__caption">Mã sản phẩm: {{layout.product.code}}</p>
+      <ul class="product-detail__list">
+        <!-- Detail -->
+        {%- for item in layout.product.content -%}
+        <li class="product-detail__list__item">
+          <span class="product-detail__list__item__icon">
+            <i class="fas fa-check-circle"></i>
+          </span>
+          <span class="product-detail__list__item__text">{{item}}</span>
+        </li>
+        {%- endfor -%}
+        <!-- Contact -->
+        <li class="product-detail__list__item">
+          <span class="product-detail__list__item__icon">
+            <i class="fas fa-check-circle"></i>
+          </span>
+          <span class="product-detail__list__item__text">Thông tin liên hệ</span>
+          <ul class="product-detail__contact">
+            <!-- Name -->
+            <li class="product-detail__contact__item">
+              <span class="product-detail__contact__item__icon"><i class="fas fa-user"></i></span>
+              <span  class="product-detail__contact__item__text">{{layout.product.contact.name}}</span>
+            </li>
+            <!-- Email -->
+            <li class="product-detail__contact__item">
+              <span class="product-detail__contact__item__icon"><i class="fas fa-envelope"></i></span>
+              <span  class="product-detail__contact__item__text">{{layout.product.contact.email}}</span>
+            </li>
+            <!-- Phone -->
+            <li class="product-detail__contact__item">
+              <span class="product-detail__contact__item__icon"><i class="fas fa-phone fa-flip-horizontal"></i></span>
+              <span  class="product-detail__contact__item__text">{{layout.product.contact.phone}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="product-detail__item product-detail__category flex-shrink-1 d-none d-lg-block">
+      <ul class="list-category__wrapper">
+        <h3 class="list-category__heading">DANH MỤC</h3>
+        {%- for item in site.data.categories -%}
+        <li class="list-category__item {% if forloop.index == 1%}list-category__item--activated{% endif %}">
+          <a class="list-category__item__text" href='{{"category.html" | relative_url}}'>{{item.name | capitalize }}</a>
+        </li>
+        {%- endfor -%}
+      </ul>
     </div>
   </div>
 </section>
-<!-- Categry Header -->
-<section class="container section category-header mb-0">
-  <div class="category-header__wrapper d-flex align-items-center justify-content-around">
-    <!-- Filter on Web -->
-    <div class="category-header__item flex-grow-1 d-none d-lg-block">
-      <div class="category-filter">
-        <form>
-          <select name="category-filter" class="form-control select-customized category-filter__select">
-            <option value="">Tất cả thư mục</option>
-            {%- for item in layout.filter -%}
-            <option value="{{forloop.index}}">{{item}}</option>  
-            {%- endfor -%}
-          </select>
-        </form>
-      </div>
-    </div>
-    <div class="category-header__item flex-grow-1">
-      <h1 class="section__title">SỮA, KEM, YOGURT</h1>
-    </div>
-    <!-- A reserved fake block for centering the heading text-->
-    <div class="category-header__item flex-grow-1 d-none d-lg-block"></div>
-  </div>
-  <div class="row d-flex d-lg-block">
+<!-- Products Suggestion -->
+<section class="section container product-suggestion">
+  <div class="row">
     <div class="col-12">
-      <div class="section__content">
-        <p>Kem sữa chua hay còn gọi là sữa chua đông lạnh (Frozen yogurt) là một món tráng miệng đông lạnh được làm từ sữa chua và đôi khi là các sản phẩm từ sữa (chế phẩm sữa) và không phải sữa khác.</p>
-        </div>
+      <h3 class="section__title">CÁC SẢN PHẨM KHÁC THUỘC NHÓM <span class="text-dark-peach-two">SỮA, KEM & YOGURT</span></h3>
     </div>
   </div>
-</section>
-<!-- Products List -->
-<section class="container section product-list">  
-  <div class="row  product-list__wrapper">
-    {%- for item in site.data.products -%}
-      <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-list__item">
-          <div class="product-list__item__wrapper">
-            <div class="product-list__item__image">
+  <div class="row">
+    <div class="col-12">
+      <div class="owl-carousel owl-theme owl-carousel--products" data-slides="6" data-slides-mobile="4" data-slides-tablet="4" data-nav="true" data-dots="false" data-loop="true">
+        {%- for item in site.data.products -%}
+        <div class="owl-carousel__item__wrapper">
+          <div class="owl-carousel__item__image">
+            <a href='{{"product.html" | relative_url}}'>
               <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
+            </a>
+          </div>
+          <div class="owl-carousel__item__content">
+            <h3 class="owl-carousel__item__title"><a href='{{"product.html" | relative_url}}'>{{item.name}}</a></h3>
+            <div class="owl-carousel__item__review d-none d-md-flex">
+              {%- for item in (1..5) -%}
+                <span class="owl-carousel__item__review__star">
+                  {%- if forloop.index < 4 -%} 
+                  <i class="fas fa-star"></i>
+                  {%- else -%}
+                    {%- if forloop.index == 4 -%}
+                    <i class="fas fa-star-half-alt"></i>
+                    {%- else -%}
+                    <i class="far fa-star"></i>
+                    {% endif %}
+                  {%- endif -%}
+                </span>
+              {%- endfor -%}
+              <span class="owl-carousel__item__review__text">12</span>
             </div>
-            <div class="product-list__item__content">
-              <h3 class="product-list__item__title">{{item.name}}</h3>
-              <div class="product-list__item__footer">
-                <button class="btn btn-view">
-                  Xem thêm
-                </button>
-                <div class="product-list__item__action">
-                  <a href="#" class="product-list__item__action__icon">
-                    <i class="fas fa-shopping-cart"></i>
-                  </a>
-                  <a href="#" class="product-list__item__action__icon {% if forloop.index == 1%}product-list__item__action__icon--activated{%endif%}">
-                    <i class="fas fa-heart"></i>
-                  </a>
-                </div>
+            <div class="owl-carousel__item__footer d-none d-md-flex">
+              <a href='{{"product.html" | relative_url}}' class="btn btn-view">
+                Xem thêm
+              </a>
+              <div class="owl-carousel__item__action">
+                <a href="#" class="owl-carousel__item__action__icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="#" class="owl-carousel__item__action__icon {% if forloop.index == 1%} owl-carousel__item__action__icon--activated {%endif%}">
+                  <i class="fas fa-heart"></i>
+                </a>
               </div>
             </div>
           </div>
-      </div>
-    {%- endfor -%}
-  </div>
-  <div class="row no-gutters category-paging">
-    <div class="paging-list m-auto">
-      <ul class="paging-list__wrapper">
-        <li class="paging-list__item paging-list__item--activated">
-          <a href="#" class="paging-list__item__text" onclick="return false;">1</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">2</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">3</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">...</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">11</a>
-        </li>
-      </ul>
+        </div>
+        {%- endfor -%}
+    </div>
     </div>
   </div>
 </section>

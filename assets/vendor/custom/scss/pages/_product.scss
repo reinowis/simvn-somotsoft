@@ -1,0 +1,112 @@
+.product-detail{
+    &__wrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    &__gallery{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    &__image{
+        box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.16);
+        border-radius: 7px;
+        overflow: hidden;
+        display: block;
+    }
+    &__heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title{
+        color: $deep-violet;
+        margin-bottom: 0px;
+        @extend .text-section__heading;
+    }
+    &__favorite{
+        color: $dark-peach-two;
+        font-size: 10px;
+    }
+    &__breakline{
+        border-top: solid 2px $warm-grey;
+        margin: 8px 0px;
+    }
+    &__caption{
+        color: $warm-grey-two;
+        @extend .text-product-detail__caption;
+    }
+    &__list{
+        list-style: none;
+        padding-left: 0px;
+        &__item{
+            margin-bottom: 20px;
+            @extend .text-product-detail;
+            &__icon{
+                color: $dark-peach-two;
+                font-size: 13px;
+                margin-right: 5px;
+            }
+        }
+    }
+    &__contact{
+        margin-top: 20px;
+        list-style: none;
+        &__item{
+            &__icon{
+                color: $deep-violet;
+            }
+        }
+    }
+    &__thumbnails{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0px;
+        margin-left: -4.5px;
+        margin-right: -4.5px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        &__item{
+            position: relative;
+            border-radius: 9px;
+            margin-left: 4.5px;
+            margin-right: 4.5px;
+            &__text{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.47);
+                border-radius: 9px;
+                color: $white;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @extend .text-thumbnail;
+            }
+        }
+    }
+    @media screen and (max-width: 991px){
+        &__wrapper{
+            flex-direction: column;
+        }
+    }
+    @media screen and (min-width: 992px){
+        &__content{
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+    }
+}

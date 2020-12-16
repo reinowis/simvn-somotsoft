@@ -48,11 +48,13 @@ $(document).ready(function(){
   for (let i = 0; i < stickyElem.length; i++){
     observer.observe(stickyElem[i]);
   }
-  // Init the custom select
+  /** Set up the custom select */
   $(".select-customized").selectmenu({
     classes: {
       "ui-selectmenu-button" : "select-customized__button",
       "ui-selectmenu-menu": "select-customized__dropdown"
     }
   });
+  /** Set up the zoom out */
+  $("a.img-zoom").zoom();
 });

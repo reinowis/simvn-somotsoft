@@ -1,3 +1,17 @@
+.category-header{
+    &__wrapper{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__item{
+        @media screen and (min-width: 768px){
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+    }
+}
 .category-path{
     &__wrapper{
         display: flex;

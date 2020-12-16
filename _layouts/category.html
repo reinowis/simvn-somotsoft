@@ -17,7 +17,7 @@ filter:
       <span class="category-path__content">SẢN PHẨM / SỮA, KEM, YOGURT</span>
     </div>
     <!-- Filter on Mobile -->
-    <div class="category-path__item d-block d-lg-none">
+    <div class="category-path__item d-block d-md-none">
       <div class="category-filter--mobile">
         <form>
           <select name="category-filter" class="form-control select-customized category-filter__select">
@@ -34,9 +34,9 @@ filter:
 </section>
 <!-- Categry Header -->
 <section class="container section category-header mb-0">
-  <div class="category-header__wrapper d-flex align-items-center justify-content-around">
+  <div class="category-header__wrapper">
     <!-- Filter on Web -->
-    <div class="category-header__item flex-grow-1 d-none d-lg-block">
+    <div class="category-header__item flex-grow-1 d-none d-md-block">
       <div class="category-filter">
         <form>
           <select name="category-filter" class="form-control select-customized category-filter__select">
@@ -48,11 +48,11 @@ filter:
         </form>
       </div>
     </div>
-    <div class="category-header__item flex-grow-1">
-      <h1 class="section__title">SỮA, KEM, YOGURT</h1>
+    <div class="category-header__item flex-grow-1 d-flex flex-column justify-content-start">
+      <h1 class="section__title mb-0">SỮA, KEM, YOGURT</h1>
     </div>
     <!-- A reserved fake block for centering the heading text-->
-    <div class="category-header__item flex-grow-1 d-none d-lg-block"></div>
+    <div class="category-header__item flex-grow-1 d-none d-md-block"></div>
   </div>
   <div class="row d-flex d-lg-block">
     <div class="col-12">
@@ -69,14 +69,32 @@ filter:
       <div class="col-12 col-md-4 col-lg-3 col-xl-2 product-list__item">
           <div class="product-list__item__wrapper">
             <div class="product-list__item__image">
-              <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
+              <a href='{{"product.html" | relative_url}}'>
+                <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
+              </a>
             </div>
             <div class="product-list__item__content">
-              <h3 class="product-list__item__title">{{item.name}}</h3>
+              <h3 class="product-list__item__title"><a href='{{"product.html" | relative_url}}'>{{item.name}}</a></h3>
+              <div class="product-list__item__review d-none d-md-flex">
+                {%- for item in (1..5) -%}
+                  <span class="product-list__item__review__star">
+                    {%- if forloop.index < 4 -%} 
+                    <i class="fas fa-star"></i>
+                    {%- else -%}
+                      {%- if forloop.index == 4 -%}
+                      <i class="fas fa-star-half-alt"></i>
+                      {%- else -%}
+                      <i class="far fa-star"></i>
+                      {% endif %}
+                    {%- endif -%}
+                  </span>
+                {%- endfor -%}
+                <span class="product-list__item__review__text">12</span>
+              </div>
               <div class="product-list__item__footer">
-                <button class="btn btn-view">
+                <a href='{{"product.html" | relative_url}}' class="btn btn-view">
                   Xem thêm
-                </button>
+                </a>
                 <div class="product-list__item__action">
                   <a href="#" class="product-list__item__action__icon">
                     <i class="fas fa-shopping-cart"></i>
@@ -94,21 +112,19 @@ filter:
   <div class="row no-gutters category-paging">
     <div class="paging-list m-auto">
       <ul class="paging-list__wrapper">
-        <li class="paging-list__item paging-list__item--activated">
-          <a href="#" class="paging-list__item__text" onclick="return false;">1</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">2</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">3</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">...</a>
-        </li>
-        <li class="paging-list__item">
-          <a href="#" class="paging-list__item__text" onclick="return false;">11</a>
-        </li>
+        {%- for item in (1..11) -%}
+          {%- if forloop.index <= 4 or forloop.index == 11-%}
+          <li class="paging-list__item {%if forloop.index == 1%}paging-list__item--activated{% endif%}">
+            <a href="#" class="paging-list__item__text">
+              {%- if forloop.index == 4-%}
+              ...
+              {%- else -%}
+              {{forloop.index}}
+              {%- endif -%}
+            </a>
+          </li>
+          {%- endif -%}
+        {%- endfor -%}
       </ul>
     </div>
   </div>
