@@ -1,5 +1,5 @@
 .text-banner {
-  font-family: SVN-Circular;
+  font-family: SVN-Circular, sans-serif;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -8,260 +8,236 @@
   text-align: left;
 }
 
+.text-section__heading {
+  font-family: iCielFester, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.text-section__content {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.text-intro__heading {
+  font-family: iCielFester, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
 .text-feedback__heading {
-    font-family: iCielFester;
-    font-size: 23px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: 1.84px;
-    text-align: left;
-  }
-  
-  .text-section__title {
-    font-family: iCielFester;
-    font-size: 18px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: 1.4px;
-    text-align: center;
-  }
-  
-  .text-section__heading {
-    font-family: iCielFester;
-    font-size: 18px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: 1.4px;
-    text-align: center;
-  }
-  
-  .text-intro__heading {
-    font-family: iCielFester;
-    font-size: 16px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  
-  .text-heading__intro {
-    font-family: iCielFester;
-    font-size: 16px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  
-  .text-feedback__caption {
-    font-family: iCielFester;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: -0.3px;
-    text-align: left;
-  }
-  
-  .text-category--grid__heading {
-    font-family: iCielFester-Med;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
+  font-family: iCielFester, sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: 1.84px;
+  text-align: left;
+}
 
-  .text-chatbox {
-    font-family: SVN-Circular;
-    font-size: 10.5px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-section__content {
-    font-family: SVN-Circular;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  
-  .text-footer__heading {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-intro__content {
-    font-family: SVN-Circular;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-banner--mobile__heading {
-    font-family: SVN-Circular;
-    font-size: 9px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-product--mobile__heading {
-    font-family: iCielFester;
-    font-size: 9px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: 0.72px;
-    text-align: center;
-  }
+.text-feedback__content {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
 
-  .text-dropdown {
-    font-family: SVN-Circular;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+.text-feedback__caption {
+  font-family: iCielFester, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+}
 
-  .text-menu {
-    font-family: SVN-Circular;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  .text-menu--activated{
-    font-family: SVN-Circular;
-    font-size: 14px;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+.text-category--grid__heading {
+  font-family: iCielFester, sans-serif-Med;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
 
-  .text-feedback__content {
-    font-family: SVN-Circular;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-btn-search {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-headline {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    line-height: 10px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-copyright {
-    font-family: Poppins;
-    font-size: 10px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-footer__list {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: 0.32px;
-    text-align: left;
-  }
-  
-  .text-btn-view {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
-  
-  .text-category--grid__content {
-    font-family: SVN-Circular;
-    font-size: 10px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: 0.48px;
-    text-align: left;
-  }
-  .text-path {
-    font-family: iCielFester;
-    font-size: 8px;
-    font-weight: bold;
-    font-stretch: semi-condensed;
-    font-style: normal;
-    letter-spacing: 1.56;
-    text-align: left;
-  }
-  .text-product-list {
-    font-family: SVN-Circular;
-    font-size: 13px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.25;
-    letter-spacing: normal;
-    text-align: center;
-  }
-  .text-select-box {
-    font-family: SVN-Circular;
-    font-size: 8px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-  }
+.text-category--grid__content {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+}
+
+.text-footer__heading {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-footer__list {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.32px;
+  text-align: left;
+}
+
+.text-intro__content {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-product--mobile__heading {
+  font-family: iCielFester, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: 0.72px;
+  text-align: center;
+}
+
+.text-dropdown {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-menu {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-menu--activated {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+
+.text-chatbox {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-btn-search {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-headline {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-copyright {
+  font-family: Poppins, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-btn-view {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.text-path {
+  font-family: iCielFester, sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  font-stretch: semi-condensed;
+  font-style: normal;
+  letter-spacing: 1.56;
+  text-align: left;
+}
+
+.text-product-list {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.text-select-box {
+  font-family: SVN-Circular, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  line-height: 10px;
+}

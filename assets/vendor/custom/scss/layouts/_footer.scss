@@ -17,6 +17,8 @@
         &__heading{
             position: relative;
             color: #ffffff;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
             width: fit-content;
             @extend .text-footer__heading;
             padding-bottom: 3px;
@@ -36,8 +38,9 @@
                 }
             }
             &--split{
-                @media screen and (min-width: 992px){
-                    column-count: 2;
+                @media screen and (min-width: 768px){
+                    -moz-column-count: 2;
+                         column-count: 2;
                 }
             }
         }
@@ -63,7 +66,7 @@
                 width: 100%;
             }
         }
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 767px){
             &__wrapper{
                 display: flex;
                 flex-direction: column;

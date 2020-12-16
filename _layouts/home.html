@@ -17,9 +17,9 @@ id: home
       </div>
     </div>
     
-    <div class="row no-gutters category-grid__wrapper d-none d-lg-flex">
+    <div class="row no-gutters category-grid__wrapper d-none d-md-flex">
       {%- for item in site.data.categories -%}
-      <div class="col-12 col-sm-6 col-lg-3 category-grid__item">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 category-grid__item">
           <div class="category-grid__item__image">
             <img src="{{item.image | relative_url}}" alt="{{item.name}}">
           </div>
@@ -37,7 +37,7 @@ id: home
       </div>
       {%- endfor -%}
     </div>
-    <div class="row no-gutters d-flex d-lg-none category-list__wrapper">
+    <div class="row no-gutters d-flex d-md-none category-list__wrapper">
         {%- for item in site.data.categories -%}
         <a href="onclick:showCategoryPopup();" class="col-12 category-list__item">
             <div class="category-list__item__wrapper">
@@ -67,7 +67,7 @@ id: home
         
         <div class="row company-info__wrapper">
             {%- for item in site.data.information -%}
-            <div class="col-12 col-lg-4 company-info__item">
+            <div class="col-12 col-md-4 company-info__item">
                 <div class="company-info__item__image">
                     <img class="img-fluid" src="{{item.image | relative_url}}" alt="{{item.name}}">
                 </div> 
@@ -126,10 +126,10 @@ id: home
     </div>
     {%- for item in site.data.testimonials -%}
     <div class="row no-gutters testimonial__item">
-        <div class="col-12 col-lg-6 testimonial__item__image">
+        <div class="col-12 col-md-6 testimonial__item__image">
             <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
         </div>
-        <div class="col-12 col-lg-6 testimonial__item__content">
+        <div class="col-12 col-md-6 testimonial__item__content">
             <h3 class="testimonial__item__title">"{{item.title}}"</h3>
             <h4 class="testimonial__item__author">{{item.author}}</h4>
             <hr class="testimonial__item__breakline"/>

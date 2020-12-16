@@ -3,121 +3,108 @@ layout: default
 id: product
 ---
 
-<!-- Homepage Banner -->
-{%- include homepage/homepage_banner.html -%}
-
-<!-- Category Grid -->
-<section class="container section category-grid">
-    <div class="row not-gutters">
-      <div class="col-12">
-            <h2 class="section__title">NHÓM SẢN PHẨM CHÍNH</h2>
-            <div class="section__content">
-              <p>Công ty S.I.M.VN sẵn sàng cung cấp các loại nguyên liệu, phụ gia thực phẩm, hóa chất... theo nhu cầu của khách hàng. Chúng tôi luôn cập nhật theo xu thế và sự phát triển của thế giới.</p>
-            </div>
-      </div>
+<!-- Banner -->
+{%- include commons/banner.html showtext=true secondarytext="DARK Chocolate Compound" primarytext="HƯƠNG VỊ CHOCOLATE ĐÍCH THỰC" image="/assets/images/banner-03.png"-%}
+<!-- Path -->
+<section class="section container category-path">
+  <div class="category-path__wrapper">
+    <div class="category-path__item">
+      <span class="category-path__content">SẢN PHẨM / SỮA, KEM, YOGURT</span>
     </div>
-    
-    <div class="row no-gutters category-grid__wrapper">
-      {%- for item in site.data.categories -%}
-      <div class="col-12 col-sm-6 col-lg-3 category-grid__item">
-          <div class="category-grid__item__image">
-            <img src="{{item.image | relative_url}}" alt="{{item.name}}">
-          </div>
-          <div class="category-grid__item__content">
-            <div class="category-grid__item__title">{{item.name}}</div>
-            <div class="category-grid__item__text">
-              <span>
-                <i class="fas fa-user"></i> {{item.contact.name}}
-              </span>
-              <span>
-                <i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}
-              </span>
-              <span>
-                <i class="fas fa-envelope"></i> {{item.contact.name}}
-              </span>
-            </div>
-            <div class="category-grid__item__action">
-              <a href="#" class="btn">Xem thêm</a>
-            </div>
-          </div>
+    <!-- Filter on Mobile -->
+    <div class="category-path__item d-block d-lg-none">
+      <div class="category-filter--mobile">
+        <form>
+          <select name="category-filter" class="form-control select-customized category-filter__select">
+            <option value="">Tất cả thư mục</option>
+            {%- for item in layout.filter -%}
+            <option value="{{forloop.index}}">{{item}}</option>  
+            {%- endfor -%}
+          </select>
+        </form>
       </div>
-      {%- endfor -%}
       
     </div>
-</section>  
-<!-- Company Information -->
-<section class="container section company-info">
-    <div class="row no-gutters">
-      <div class="col-12">
-            <h2 class="section__title">GIỚI THIỆU VỀ CÔNG TY</h2>
-            <div class="section__content">
-              <p>Với hơn 20 năm kinh nghiệm, Công Ty Cổ Phần S.I.M. VN luôn sẵn sàng phục vụ tận tâm, vì sức khoẻ cộng đồng đáp ứng nhu cầu của khách hàng một cách hoàn hảo, cam kết mang lại lợi ích cao nhất cho khách hàng.
-            </p>
-            </div>
+  </div>
+</section>
+<!-- Categry Header -->
+<section class="container section category-header mb-0">
+  <div class="category-header__wrapper d-flex align-items-center justify-content-around">
+    <!-- Filter on Web -->
+    <div class="category-header__item flex-grow-1 d-none d-lg-block">
+      <div class="category-filter">
+        <form>
+          <select name="category-filter" class="form-control select-customized category-filter__select">
+            <option value="">Tất cả thư mục</option>
+            {%- for item in layout.filter -%}
+            <option value="{{forloop.index}}">{{item}}</option>  
+            {%- endfor -%}
+          </select>
+        </form>
       </div>
     </div>
-    
-    <div class="row no-gutters company-info__wrapper">
-        {%- for item in site.data.information -%}
-        <div class="col-12 col-lg-4 company-info__item">
-            <div class="company-info__item__image">
-                <img class="img-fluid" src="{{item.image | relative_url}}" alt="{{item.name}}">
-            </div> 
-            <div class="company-info__item__wrapper">
-                <div class="company-info__item__icon">
-                    <img class="img-fluid" src="{{item.icon | relative_url}}" alt="{{item.name}}">
-                </div>
-                <div class="company-info__item__content">
-                    <p>{{item.content}}</p>
-                </div>
-            </div>
-         </div>
-        {%- endfor -%}
+    <div class="category-header__item flex-grow-1">
+      <h1 class="section__title">SỮA, KEM, YOGURT</h1>
     </div>
-</section>  
-<!-- Partners Logo -->
-<section class="container section partner-slides">
-    <div class="row no-gutters">
-        <div class="col-12">
-                <h2 class="section__title">ĐỐI TÁC CHIẾN LƯỢC - NHÀ CUNG CẤP ĐỘC QUYỀN</h2>
-                <div class="section__content">
-                <p>SIM là nhà cung cấp chiến lược, lâu dài và uy tín của hầu hết các nhà sản xuất đầu ngành trong mọi lãnh vực chế biến thực phẩm , dược phẩm,  thức ăn gia súc.
-                </p>
-                </div>
+    <!-- A reserved fake block for centering the heading text-->
+    <div class="category-header__item flex-grow-1 d-none d-lg-block"></div>
+  </div>
+  <div class="row d-flex d-lg-block">
+    <div class="col-12">
+      <div class="section__content">
+        <p>Kem sữa chua hay còn gọi là sữa chua đông lạnh (Frozen yogurt) là một món tráng miệng đông lạnh được làm từ sữa chua và đôi khi là các sản phẩm từ sữa (chế phẩm sữa) và không phải sữa khác.</p>
         </div>
     </div>
-    <div class="row no-gutters partner-slides__wrapper">
-        <div class="col-12">
-            <div class="owl-carousel owl-theme" data-slides="4">
-                {%- for item in site.data.partners -%}
-                    <div class="partner-slides__item">
-                        <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
-                    </div>
-                {%- endfor -%}
-                
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
-<section class="container section testimonial">
-    <div class="row no-gutters">
-        <div class="col-12">
-            <h2 class="section__title">ĐỐI TÁC CHIẾN LƯỢC - NHÀ CUNG CẤP ĐỘC QUYỀN</h2>
-        </div>
-    </div>
-    {%- for item in site.data.testimonials -%}
-    <div class="row no-gutters testimonial__item">
-        <div class="col-12 col-lg-6 testimonial__item__content">
-            <h3 class="testimonial__item__title">{{item.title}}</h3>
-            <h4 class="testimonial__item__author">{{item.author}}</h4>
-            <p class="testimonial__item__content">{{item.content}}</p>
-            <hr class="testimonial__item__breakline"/>
-            <p class="testimonial__item__author--small">{{item.author}}</p>
-        </div>
-        <div class="col-12 col-lg-6 testimonial__item__image">
-            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
-        </div>
-    </div>
+<!-- Products List -->
+<section class="container section product-list">  
+  <div class="row  product-list__wrapper">
+    {%- for item in site.data.products -%}
+      <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-list__item">
+          <div class="product-list__item__wrapper">
+            <div class="product-list__item__image">
+              <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
+            </div>
+            <div class="product-list__item__content">
+              <h3 class="product-list__item__title">{{item.name}}</h3>
+              <div class="product-list__item__footer">
+                <button class="btn btn-view">
+                  Xem thêm
+                </button>
+                <div class="product-list__item__action">
+                  <a href="#" class="product-list__item__action__icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </a>
+                  <a href="#" class="product-list__item__action__icon {% if forloop.index == 1%}product-list__item__action__icon--activated{%endif%}">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     {%- endfor -%}
-    
+  </div>
+  <div class="row no-gutters category-paging">
+    <div class="paging-list m-auto">
+      <ul class="paging-list__wrapper">
+        <li class="paging-list__item paging-list__item--activated">
+          <a href="#" class="paging-list__item__text" onclick="return false;">1</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">2</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">3</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">...</a>
+        </li>
+        <li class="paging-list__item">
+          <a href="#" class="paging-list__item__text" onclick="return false;">11</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
