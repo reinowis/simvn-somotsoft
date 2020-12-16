@@ -32,7 +32,7 @@ $(document).ready(function(){
   /** End of Carousel */
   /** Sticky the header */
   // get the sticky element
-  var stickyElem = $(".header__mobile__collapse");
+  var stickyElem = $(".header__mobile__collapse__marker");
   var observer = new IntersectionObserver(function(e){
       for (let i = 0; i < e.length; i++){
         if (e[i].isIntersecting){

@@ -78,12 +78,13 @@
             }
         }
         &:hover, &:focus, &:focus-within{
-            transform: scale(1.05);
+            transform: scale(1.03);
             z-index: 2;
+            box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.16);
             .category-grid__item{
                 &__image{
                     &::before{
-                        background-color: rgba(0, 0, 0, 0.7);
+                        background-color: rgba(0, 0, 0, 0.6);
                     }
                 }
             }
@@ -247,7 +248,7 @@
             .product-list__item{
                 &__wrapper{
                     z-index: 2;
-                    transform: translateY(-10px);
+                    transform: scale(1.035);
                 }
                 &__image{
                     opacity: 0.7;

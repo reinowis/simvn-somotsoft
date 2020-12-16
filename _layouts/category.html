@@ -69,12 +69,12 @@ filter:
       <div class="col-12 col-md-4 col-lg-3 col-xl-2 product-list__item">
           <div class="product-list__item__wrapper">
             <div class="product-list__item__image">
-              <a href='{{"product.html" | relative_url}}'>
+              <a href="{{'product.html' | relative_url}}">
                 <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
               </a>
             </div>
             <div class="product-list__item__content">
-              <h3 class="product-list__item__title"><a href='{{"product.html" | relative_url}}'>{{item.name}}</a></h3>
+              <h3 class="product-list__item__title"><a href="{{'product.html' | relative_url}}">{{item.name}}</a></h3>
               <div class="product-list__item__review d-none d-md-flex">
                 {%- for item in (1..5) -%}
                   <span class="product-list__item__review__star">
@@ -92,7 +92,7 @@ filter:
                 <span class="product-list__item__review__text">12</span>
               </div>
               <div class="product-list__item__footer">
-                <a href='{{"product.html" | relative_url}}' class="btn btn-view" title="Xem thêm">
+                <a href="{{'product.html' | relative_url}}" class="btn btn-view" title="Xem thêm">
                   Xem thêm
                 </a>
                 <div class="product-list__item__action">
