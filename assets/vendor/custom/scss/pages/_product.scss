@@ -35,6 +35,16 @@
     &__favorite{
         color: $dark-peach-two;
         font-size: 10px;
+        &:hover, &--activated{
+            text-decoration: none;
+            color: $dark-peach-two;
+            .far.fa-circle{
+                font-weight: 900;
+            }
+            .far.fa-heart{
+                color: $white;
+            }
+        }
     }
     &__breakline{
         border-top: solid 2px $warm-grey;
@@ -96,6 +106,9 @@
                 justify-content: center;
                 @extend .text-thumbnail;
             }
+            &__image{
+                border-radius: 7px;
+            }
         }
     }
     @media screen and (max-width: 991px){
@@ -107,6 +120,9 @@
         &__content{
             padding-left: 20px;
             padding-right: 10px;
+        }
+        &__gallery{
+            max-width: 40%;
         }
     }
 }

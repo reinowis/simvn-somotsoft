@@ -57,4 +57,16 @@ $(document).ready(function(){
   });
   /** Set up the zoom out */
   $("a.img-zoom").zoom();
+  /** Set up smooth scroll */
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
 });

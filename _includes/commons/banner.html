@@ -2,7 +2,7 @@
 <section class="container-fluid section p-0 banner-main">
   <div class="row no-gutters">
     <div class="col-12">
-      <div class="owl-carousel owl-theme owl-carousel--banner {% if include.showtext %}owl-carousel--banner--text{% endif %}" data-slides="1" data-dots="true" data-nav="false">
+      <div class="owl-carousel owl-theme owl-carousel--banner {% if include.showtext %}owl-carousel--banner--text{% endif %}" data-slides="1" data-dots="true" data-nav="true" data-autoplay="true" data-loop="true">
         {%- for item in (1..4) -%}
         <div class="owl-carousel__item"> 
             {%- if include.showtext -%}

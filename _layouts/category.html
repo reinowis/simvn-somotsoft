@@ -92,14 +92,14 @@ filter:
                 <span class="product-list__item__review__text">12</span>
               </div>
               <div class="product-list__item__footer">
-                <a href='{{"product.html" | relative_url}}' class="btn btn-view">
+                <a href='{{"product.html" | relative_url}}' class="btn btn-view" title="Xem thêm">
                   Xem thêm
                 </a>
                 <div class="product-list__item__action">
-                  <a href="#" class="product-list__item__action__icon">
+                  <a href="#" class="product-list__item__action__icon" title="Thêm vào giỏ hàng">
                     <i class="fas fa-shopping-cart"></i>
                   </a>
-                  <a href="#" class="product-list__item__action__icon {% if forloop.index == 1%}product-list__item__action__icon--activated{%endif%}">
+                  <a href="#" class="product-list__item__action__icon {% if forloop.index == 1%}product-list__item__action__icon--activated{%endif%}" title="Yêu thích">
                     <i class="fas fa-heart"></i>
                   </a>
                 </div>
@@ -115,7 +115,7 @@ filter:
         {%- for item in (1..11) -%}
           {%- if forloop.index <= 4 or forloop.index == 11-%}
           <li class="paging-list__item {%if forloop.index == 1%}paging-list__item--activated{% endif%}">
-            <a href="#" class="paging-list__item__text">
+            <a href="#" class="paging-list__item__text" title="{% if forloop.index < 4 or forloop.index == 11 %}Page {{forloop.index}}{% else %}...{% endif %}">
               {%- if forloop.index == 4-%}
               ...
               {%- else -%}

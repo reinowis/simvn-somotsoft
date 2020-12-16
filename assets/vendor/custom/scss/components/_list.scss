@@ -8,6 +8,7 @@
         margin-bottom: 5.25px;
         padding-left: 3.25px;
         padding-right: 3.25px;
+        @include transition-all();
         &__image{
             position: absolute;
             top: 0px;
@@ -76,7 +77,9 @@
                 @extend .text-btn-view;
             }
         }
-        &:hover{
+        &:hover, &:focus, &:focus-within{
+            transform: scale(1.05);
+            z-index: 2;
             .category-grid__item{
                 &__image{
                     &::before{
@@ -179,10 +182,12 @@
             align-items: center;
             justify-content: space-between;
             border-radius: 3px;
+            border: solid 1px transparent;
             box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.19);
             background-color: $white;
             padding: 30px 9px;
             height: 100%;
+            @include transition-all();
         }
         &__image{
             width: 100%;
@@ -235,6 +240,17 @@
                 &:hover, &--activated{
                     color: $dark-peach-two;
                     text-decoration: none;
+                }
+            }
+        }
+        &:hover, &:focus, &:focus-within{
+            .product-list__item{
+                &__wrapper{
+                    z-index: 2;
+                    transform: translateY(-10px);
+                }
+                &__image{
+                    opacity: 0.7;
                 }
             }
         }

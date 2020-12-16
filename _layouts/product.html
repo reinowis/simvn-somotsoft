@@ -44,7 +44,7 @@ product:
         {%- for item in  layout.product.thumbnails-%}
         {%- if forloop.index <= 4 -%}
         <li class="product-detail__thumbnails__item">
-          <a href="#">
+          <a href="{{item | relative_url}}" data-fancybox="gallery">
             <img src="{{item | relative_url}}" alt="" class="img-fluid product-detail__thumbnails__item__image">
             {%- if forloop.index ==4 -%}
               <div class="product-detail__thumbnails__item__text">
@@ -60,7 +60,7 @@ product:
     <div class="product-detail__item product-detail__content flex-grow-1">
       <div class="product-detail__heading">
         <h1 class="product-detail__title">{{layout.product.title}}</h1>
-        <a href="#" class="product-detail__favorite">
+        <a href="#" class="product-detail__favorite" title="Yêu thích">
           <span class="fa-stack fa-2x">
             <i class="far fa-circle fa-stack-2x"></i>
             <i class="far fa-heart fa-stack-1x"></i>
@@ -154,14 +154,14 @@ product:
               <span class="owl-carousel__item__review__text">12</span>
             </div>
             <div class="owl-carousel__item__footer d-none d-md-flex">
-              <a href='{{"product.html" | relative_url}}' class="btn btn-view">
+              <a href='{{"product.html" | relative_url}}' class="btn btn-view" title="Xem thêm">
                 Xem thêm
               </a>
               <div class="owl-carousel__item__action">
-                <a href="#" class="owl-carousel__item__action__icon">
+                <a href="#" class="owl-carousel__item__action__icon" title="Thêm vào giỏ hàng">
                   <i class="fas fa-shopping-cart"></i>
                 </a>
-                <a href="#" class="owl-carousel__item__action__icon {% if forloop.index == 1%} owl-carousel__item__action__icon--activated {%endif%}">
+                <a href="#" class="owl-carousel__item__action__icon {% if forloop.index == 1%} owl-carousel__item__action__icon--activated {%endif%}" title="Yêu thích">
                   <i class="fas fa-heart"></i>
                 </a>
               </div>

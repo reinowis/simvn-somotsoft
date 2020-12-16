@@ -199,9 +199,7 @@
             padding: 17.5px;
             overflow: auto;
             box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.73);
-            // transition: ease-in-out;
-            // transition-duration: 0.5s;
-            height: 0px;
+            @include transition-all();
             &.collapse.show{
                 height: auto;
             }
@@ -275,10 +273,11 @@
             position: relative;
             border: 0px;
             height: auto;
-            transition-duration: 1s;
-            transition-timing-function: ease-in-out;
-            padding: 5px;
+            padding: 0px;
             list-style-type: decimal;
+            transition-property: height;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
             &__item{
                 list-style-position: inside;
                 padding: 7.5px 6.5px;
@@ -298,6 +297,11 @@
                         border-bottom-color: $deep-violet;
                     }
                 }
+            }
+            &.collapse:not(.show), &.collapsing{
+                display: block;
+                height: 0px;
+                overflow: hidden;
             }
         }
         &__list{
