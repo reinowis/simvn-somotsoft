@@ -12,6 +12,10 @@ $(function () {
       var loop = $(this).data('loop') || false;
       var autoplaySpeed = false;
       var smartSpeed = $(this).data('smart-speed') || 1000;
+      var navText = ['&#x27;next&#x27;','&#x27;prev&#x27;'];
+      if ($(this).data('custom-nav')){
+        navText = ['<i class="fas fa-chevron-circle-left"></i>', '<i class="fas fa-chevron-circle-right"></i>'];
+      };
       $(this).owlCarousel({
           autoplay: autoplay,
           nav: nav,
@@ -19,6 +23,7 @@ $(function () {
           loop: loop,
           autoplaySpeed: autoplaySpeed,
           smartSpeed: smartSpeed,
+          navText: navText,
           responsive: {
             0:{
               items: slidesMobile

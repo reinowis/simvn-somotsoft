@@ -2,7 +2,7 @@
 <section class="container-fluid section p-0 banner-main">
   <div class="row no-gutters">
     <div class="col-12">
-      <div class="owl-carousel owl-theme owl-carousel--banner" data-slides="1" data-dots="true" data-nav="true" data-autoplay="true" data-loop="true">
+      <div class="owl-carousel owl-theme owl-carousel--banner" data-slides="1" data-dots="true" data-nav="true" data-autoplay="true" data-loop="true" data-custom-nav="true">
         {%- for item in (1..4) -%}
         <div class="owl-carousel__item  {% if include.type == 'homepage' %}owl-carousel__item--highlight{% else if include.type= 'page' %}owl-carousel__item--text{% endif %}"> 
             {%- if include.showtext -%}

@@ -228,25 +228,35 @@
             .owl-nav{
                 button.owl-prev, button.owl-next{
                     position: absolute;
-                    width: 20px;
-                    height: 70px;
+                    width: 40px;
+                    height: 40px;
                     font-size: 40px;
-                    line-height: 70px;
-                    background-color: $very-light-pink-four;
+                    line-height: 40px;
                     outline: none;
                     color: $white;
                     z-index: 1;
+                    color: $dark-peach;
+                    background: none;
+                    opacity: 0.8;
                     &:focus{
                         outline: none;
                     }
+                    span{
+                        font-family: "Font Awesome 5 Free";
+                    }
                 }
                 button.owl-prev{
-                    top: calc((100% - 70px)/2);
-                    left: 0px;
+                    top: calc((100% - 40px)/2);
+                    left: 5%;
                 }
                 button.owl-next{
-                    top: calc((100% - 70px)/2);
-                    left: calc(100% - 20px);
+                    span{
+                        &::before{
+                            content: "\f138";
+                        }
+                    }
+                    top: calc((100% - 40px)/2);
+                    left: calc(95% - 40px);
                 }
             }
         }
