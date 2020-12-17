@@ -36,6 +36,9 @@
         margin-top: 0px;
         margin-bottom: 10px;
     }
+    &:hover{
+        @include jump-animate();
+    }
 }
 a.img-zoom{
     display: block;

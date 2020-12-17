@@ -6,6 +6,9 @@ body{
     &.is-backdrop{
         overflow: hidden;
     }
+    &.modal-open{
+        padding-right: 0px !important;
+    }
 }
 .section{
     margin-bottom: 40px;

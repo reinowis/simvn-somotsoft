@@ -1,0 +1,45 @@
+.modal{
+    &.customized-popup{
+        padding-right: 0px !important;
+        .customized-popup{
+            &__close{
+                position: absolute;
+                top: -10px;
+                left: calc(100% - 25px);
+                color: $dark-peach-two;
+                z-index: 1051;
+                font-size: 15px;
+                background: none;
+                outline: none;
+                border: none;
+                padding: 0px;
+            }
+            &__body{
+                padding: 1px;
+            }
+            &__wrapper{
+                padding: 0px;
+            }
+            &__bottom{
+                padding-left: 5px;
+                padding-right: 5px;
+                margin-bottom: 10px;
+            }
+        }
+        .category-grid{
+            &__item{
+                &:hover, &:focus, &:focus-within{
+                    transform: none;
+                }
+                &__text{
+                    margin-bottom: 10px;
+                }
+                &__action{
+                    .btn-view{
+                        padding: 5px 19.5px 5.5px;
+                    }
+                }
+            }
+        }
+    }
+}

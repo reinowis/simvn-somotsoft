@@ -1,0 +1,44 @@
+<div class="modal fade customized-popup" id="category-popup" tabindex="-1" role="dialog" aria-labelledby="category-popup" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body customized-popup__body">
+            <button class="customized-popup__close" data-dismiss="modal" aria-label="Close">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x text-white"></i>
+                    <i class="far fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-times fa-stack-1x"></i>
+                </span>
+            </button>
+            <div class="container-fluid customized-popup__wrapper">
+                <div class="customized-popup__top">
+                    <div class="row no-gutters category-grid__wrapper">
+                    {%- for item in site.data.categories -%}
+                    {%- if forloop.index == 1 -%}
+                    <div class="col-12 category-grid__item">
+                        <div class="category-grid__item__image">
+                            <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+                        </div>
+                        <div class="category-grid__item__content">
+                            <div class="category-grid__item__title">{{item.name}}</div>
+                            <div class="category-grid__item__text d-flex flex-column align-items-start">
+                                <span><i class="fas fa-user"></i> {{item.contact.name}}</span>
+                                <span><i class="fas fa-phone fa-flip-horizontal"></i> {{item.contact.phone}}</span>
+                                <span><i class="fas fa-envelope"></i> {{item.contact.name}}</span>
+                            </div>
+                            <div class="category-grid__item__action">
+                            <a href="{{'category.html'|relative_url}}" class="btn btn-view" title="Xem thêm">Xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%- endif -%}
+                    {%- endfor -%}
+                    </div>
+                </div>
+                <div class="customized-popup__bottom">
+                    {%- include commons/slider.html slides=4 slides_tablet=4 slides_mobile=4 class="owl-carousel--products--slider" type='minimal'-%}
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

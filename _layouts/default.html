@@ -11,7 +11,11 @@
   {{ content }}
 
   {% include commons/footer.html %}
-
+  <!-- Start Of Popup On Homepge -->
+  {%- if layout.id == 'home' -%}
+  {% include commons/popup.html %}
+  {%- endif -%}
+  <!-- End Of Popup On Homepge -->
   {% include vendor/scripts.html %}
 
   {% include vendor/google-analytics.html %}

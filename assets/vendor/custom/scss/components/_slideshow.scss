@@ -230,7 +230,8 @@
                     position: absolute;
                     width: 20px;
                     height: 70px;
-                    padding: 15.2px 3.5px 14.8px 2.5px;
+                    font-size: 40px;
+                    line-height: 70px;
                     background-color: $very-light-pink-four;
                     outline: none;
                     color: $white;
@@ -265,6 +266,10 @@
                     height: 100%;
                     margin: 0px 4px;
                     padding: 30px 9px;
+                    &:hover, &:focus, &:focus-within{
+                        transform: scale(1.03);
+                        box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.19);
+                    }
                 }
                 &__image{
                     width: 100%;
@@ -330,19 +335,31 @@
                 height: 100%;
             }
             .owl-item{
-                transform: translateZ(0);
-                -webkit-transform: translateZ(0);
-                -ms-transform: translateZ(0); 
                 padding: 5px;
                 height: 100%;
                 display: block;
+
             }
             .owl-nav{
                 button.owl-prev{
-                    left: -10px;
+                    left: 0px;
                 }
                 button.owl-next{
-                    left: 100%;
+                    left: calc(100% - 10px);
+                }
+            }
+        }
+        &--minimal{
+            .owl-carousel{
+                &__item{
+                    &__wrapper{
+                        box-shadow: none;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                    }
+                    &__image{
+                        border-radius: 7px;
+                    }
                 }
             }
         }

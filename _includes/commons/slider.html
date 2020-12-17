@@ -1,0 +1,45 @@
+<div class="owl-carousel owl-theme owl-carousel--products {% if include.type == 'minimal' %}owl-carousel--products--minimal{% endif%}" data-slides="{{include.slides}}" data-slides-tablet="{{include.slides_tablet}}" data-slides-mobile="{{include.slides_mobile}}" data-nav="true" data-dots="false" data-loop="true" data-autoplay="false">
+  {%- for item in site.data.products -%}
+  <div class="owl-carousel__item__wrapper">
+    <div class="owl-carousel__item__image">
+      <a href="{{'product.html' | relative_url}}">
+        <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
+      </a>
+    </div>
+    <div class="owl-carousel__item__content">
+      <h3 class="owl-carousel__item__title"><a href="{{'product.html' | relative_url}}">{{item.name}}</a></h3>
+      {%- if include.type != 'minimal' -%}
+      <div class="owl-carousel__item__review d-none d-md-flex">
+        {%- for item in (1..5) -%}
+          <span class="owl-carousel__item__review__star">
+            {%- if forloop.index < 4 -%} 
+            <i class="fas fa-star"></i>
+            {%- else -%}
+              {%- if forloop.index == 4 -%}
+              <i class="fas fa-star-half-alt"></i>
+              {%- else -%}
+              <i class="far fa-star"></i>
+              {% endif %}
+            {%- endif -%}
+          </span>
+        {%- endfor -%}
+        <span class="owl-carousel__item__review__text">12</span>
+      </div>
+      <div class="owl-carousel__item__footer d-none d-md-flex">
+        <a href="{{'product.html' | relative_url}}" class="btn btn-view ws-nowrap" title="Xem thêm">
+          Xem thêm
+        </a>
+        <div class="owl-carousel__item__action ws-nowrap">
+          <a href="#" class="owl-carousel__item__action__icon" title="Thêm vào giỏ hàng">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <a href="#" class="owl-carousel__item__action__icon {% if forloop.index == 1%} owl-carousel__item__action__icon--activated {%endif%}" title="Yêu thích">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</div>

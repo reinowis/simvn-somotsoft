@@ -22,7 +22,7 @@ product:
 ---
 
 <!-- Banner -->
-{%- include commons/banner.html showtext=true type="page" secondarytext="DARK Chocolate Compound" primarytext="HƯƠNG VỊ CHOCOLATE ĐÍCH THỰC" image="/assets/images/banner-03.png"-%}
+{%- include commons/banner.html showtext=true type="page" secondary_text="DARK Chocolate Compound" primary_text="HƯƠNG VỊ CHOCOLATE ĐÍCH THỰC" image="/assets/images/banner-03.png"-%}
 <!-- Path -->
 <section class="section container category-path">
   <div class="category-path__wrapper">
@@ -122,54 +122,12 @@ product:
 <section class="section container product-suggestion">
   <div class="row">
     <div class="col-12">
-      <h3 class="section__title">CÁC SẢN PHẨM KHÁC THUỘC NHÓM <span class="text-dark-peach-two">SỮA, KEM & YOGURT</span></h3>
+      <h3 class="section__title">CÁC SẢN PHẨM KHÁC THUỘC NHÓM <span class="text-peach-two">SỮA, KEM & YOGURT</span></h3>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      <div class="owl-carousel owl-theme owl-carousel--products" data-slides="6" data-slides-mobile="3" data-slides-tablet="4" data-nav="true" data-dots="false" data-loop="true">
-        {%- for item in site.data.products -%}
-        <div class="owl-carousel__item__wrapper">
-          <div class="owl-carousel__item__image">
-            <a href="{{'product.html' | relative_url}}">
-              <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
-            </a>
-          </div>
-          <div class="owl-carousel__item__content">
-            <h3 class="owl-carousel__item__title"><a href="{{'product.html' | relative_url}}">{{item.name}}</a></h3>
-            <div class="owl-carousel__item__review d-none d-md-flex">
-              {%- for item in (1..5) -%}
-                <span class="owl-carousel__item__review__star">
-                  {%- if forloop.index < 4 -%} 
-                  <i class="fas fa-star"></i>
-                  {%- else -%}
-                    {%- if forloop.index == 4 -%}
-                    <i class="fas fa-star-half-alt"></i>
-                    {%- else -%}
-                    <i class="far fa-star"></i>
-                    {% endif %}
-                  {%- endif -%}
-                </span>
-              {%- endfor -%}
-              <span class="owl-carousel__item__review__text">12</span>
-            </div>
-            <div class="owl-carousel__item__footer d-none d-md-flex">
-              <a href="{{'product.html' | relative_url}}" class="btn btn-view ws-nowrap" title="Xem thêm">
-                Xem thêm
-              </a>
-              <div class="owl-carousel__item__action ws-nowrap">
-                <a href="#" class="owl-carousel__item__action__icon" title="Thêm vào giỏ hàng">
-                  <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="#" class="owl-carousel__item__action__icon {% if forloop.index == 1%} owl-carousel__item__action__icon--activated {%endif%}" title="Yêu thích">
-                  <i class="fas fa-heart"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {%- endfor -%}
-    </div>
+      {%- include commons/slider.html slides=6 slides_tablet=4 slides_mobile=3 type='normal'-%}
     </div>
   </div>
 </section>

@@ -2,14 +2,14 @@
 layout: default
 id: home
 banner:
-    highlighttext:
+    highlight_text:
         - Phục vụ bạn
         - Với cả trái tim
-    secondarytext: Với đầy đủ các nhóm sản phẩm khác nhau
+    secondary_text: Với đầy đủ các nhóm sản phẩm khác nhau
 ---
 
 <!-- Homepage Banner -->
-{%- include commons/banner.html image="/assets/images/banner-01.png" type="homepage" showtext=true subimage="/assets/images/logo-banner.png" highlighttext=layout.banner.primarytext secondarytext=layout.banner.secondaytext -%}
+{%- include commons/banner.html image="/assets/images/banner-01.png" type="homepage" showtext=true subimage="/assets/images/logo-banner.png" highlight_text=layout.banner.primary_text secondary_text=layout.banner.secondaytext -%}
 <!-- Category Grid -->
 <section class="container section category-grid">
     <div class="row not-gutters">
@@ -35,7 +35,7 @@ banner:
                 <span><i class="fas fa-envelope"></i> {{item.contact.name}}</span>
             </div>
             <div class="category-grid__item__action">
-              <a href="{{'category.html'| relative_url}}" class="btn btn-view" title="Xem thêm">Xem thêm</a>
+              <a onclick="showCategoryPopup();return false;" href="#" class="btn btn-view" title="Xem thêm">Xem thêm</a>
             </div>
           </div>
       </div>
@@ -43,7 +43,7 @@ banner:
     </div>
     <div class="row no-gutters d-flex d-md-none category-list__wrapper">
         {%- for item in site.data.categories -%}
-        <a href="onclick:showCategoryPopup();" class="col-12 category-list__item">
+        <a onclick="showCategoryPopup();return false;" href="#" class="col-12 category-list__item">
             <div class="category-list__item__wrapper">
                 <div class="category-list__item__image">
                     <img src="{{item.image | relative_url}}" alt="{{item.name}}">
@@ -110,7 +110,7 @@ banner:
         </div>
         <div class="row no-gutters partner-slides__wrapper">
             <div class="col-12">
-                <div class="owl-carousel owl-theme owl-carousel--images" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true">
+                <div class="owl-carousel owl-theme owl-carousel--images" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true" data-autoplay="false">
                     {%- for item in site.data.partners -%}
                         <div class="partner-slides__item">
                             <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
