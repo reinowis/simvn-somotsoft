@@ -43,4 +43,7 @@
 a.img-zoom{
     display: block;
     overflow: hidden;
+    &:hover, &:focus, &:focus-within{
+        cursor: zoom-in;
+    }
 }

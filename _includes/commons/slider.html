@@ -1,11 +1,9 @@
-<div class="owl-carousel owl-theme owl-carousel--products {% if include.type == 'minimal' %}owl-carousel--products--minimal{% endif%}" data-slides="{{include.slides}}" data-slides-tablet="{{include.slides_tablet}}" data-slides-mobile="{{include.slides_mobile}}" data-nav="true" data-dots="false" data-loop="true" data-autoplay="false">
+<div class="owl-carousel owl-theme owl-carousel--products {% if include.type == 'minimal' %}owl-carousel--products--minimal{% endif%}" data-slides="{{include.slides}}" data-slides-tablet="{{include.slides_tablet}}" data-slides-mobile="{{include.slides_mobile}}" data-nav="true" data-dots="false" data-loop="true" data-autoplay="false" data-lazyload="true" data-same-height="true">
   {%- for item in site.data.products -%}
   <div class="owl-carousel__item__wrapper">
-    <div class="owl-carousel__item__image">
-      <a href="{{'product.html' | relative_url}}">
-        <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid">
-      </a>
-    </div>
+    <a class="owl-carousel__item__image " href="{{'product.html' | relative_url}}">
+        <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="img-fluid lazyload">
+    </a>
     <div class="owl-carousel__item__content">
       <h3 class="owl-carousel__item__title"><a href="{{'product.html' | relative_url}}">{{item.name}}</a></h3>
       {%- if include.type != 'minimal' -%}

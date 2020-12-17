@@ -25,7 +25,7 @@ banner:
       {%- for item in site.data.categories -%}
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 category-grid__item">
           <div class="category-grid__item__image">
-            <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+            <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="lazyload">
           </div>
           <div class="category-grid__item__content">
             <div class="category-grid__item__title">{{item.name}}</div>
@@ -46,7 +46,7 @@ banner:
         <a onclick="showCategoryPopup();return false;" href="#" class="col-12 category-list__item">
             <div class="category-list__item__wrapper">
                 <div class="category-list__item__image">
-                    <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+                    <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="lazyload">
                 </div>
                 <div class="category-list__item__content">
                     <h4 class="category-list__item__title">{{item.name}}</h4>
@@ -73,11 +73,11 @@ banner:
             {%- for item in site.data.information -%}
             <div class="col-12 col-md-4 company-info__item">
                 <div class="company-info__item__image">
-                    <img class="img-fluid" src="{{item.image | relative_url}}" alt="{{item.name}}">
+                    <img class="img-fluid lazyload" src="{{item.image | relative_url}}" alt="{{item.name}}">
                 </div> 
                 <div class="company-info__item__wrapper">
                     <div class="company-info__item__icon">
-                        <img class="img-fluid" src="{{item.icon | relative_url}}" alt="{{item.name}}">
+                        <img class="img-fluid lazyload" src="{{item.icon | relative_url}}" alt="{{item.name}}">
                     </div>
                     <h3 class="company-info__item__title {{item.style}}">
                         {{item.name}}
@@ -110,10 +110,10 @@ banner:
         </div>
         <div class="row no-gutters partner-slides__wrapper">
             <div class="col-12">
-                <div class="owl-carousel owl-theme owl-carousel--images" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true" data-autoplay="false">
+                <div class="owl-carousel owl-theme owl-carousel--images" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true" data-autoplay="false" data-lazyload="true">
                     {%- for item in site.data.partners -%}
                         <div class="partner-slides__item">
-                            <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
+                            <img src="{{item | relative_url}}" alt="Partner" class="img-fluid lazyload">
                         </div>
                     {%- endfor -%}
                 </div>
@@ -130,7 +130,7 @@ banner:
     {%- for item in site.data.testimonials -%}
     <div class="row no-gutters testimonial__item">
         <div class="col-12 col-md-6 testimonial__item__image">
-            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid">
+            <img src="{{item.image|relative_url}}" alt="{{item.title}}" class="img-fluid lazyload">
         </div>
         <div class="col-12 col-md-6 testimonial__item__content">
             <h3 class="testimonial__item__title">"{{item.title}}"</h3>

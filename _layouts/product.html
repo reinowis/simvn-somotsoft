@@ -39,7 +39,7 @@ product:
     <div class="product-detail__item product-detail__gallery flex-grow-1">
       <div class="product-detail__image">
         <a href="#" class="img-zoom">
-          <img src='{{layout.product.image | relative_url}}' alt="{{layout.product.title}}" class="img-fluid">
+          <img src='{{layout.product.image | relative_url}}' alt="{{layout.product.title}}" class="img-fluid lazyload">
         </a>
       </div>
       <ul class="product-detail__thumbnails">
@@ -47,7 +47,7 @@ product:
         {%- if forloop.index <= 4 -%}
         <li class="product-detail__thumbnails__item">
           <a href="{{item | relative_url}}" data-fancybox="gallery">
-            <img src="{{item | relative_url}}" alt="" class="img-fluid product-detail__thumbnails__item__image">
+            <img src="{{item | relative_url}}" alt="" class="img-fluid lazyload product-detail__thumbnails__item__image">
             {%- if forloop.index ==4 -%}
               <div class="product-detail__thumbnails__item__text">
                 <span>+ 3</span>

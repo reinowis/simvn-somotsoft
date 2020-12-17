@@ -2,7 +2,7 @@
 <section class="container-fluid section p-0 banner-main">
   <div class="row no-gutters">
     <div class="col-12">
-      <div class="owl-carousel owl-theme owl-carousel--banner" data-slides="1" data-dots="true" data-nav="true" data-autoplay="true" data-loop="true" data-custom-nav="true">
+      <div class="owl-carousel owl-theme owl-carousel--banner" data-slides="1" data-dots="true" data-nav="true" data-autoplay="true" data-loop="true" data-custom-nav="true" data-lazyload="true" data-autoplay-timeout="3000" data-autoplay-hover-pause="true">
         {%- for item in (1..4) -%}
         <div class="owl-carousel__item  {% if include.type == 'homepage' %}owl-carousel__item--highlight{% else if include.type= 'page' %}owl-carousel__item--text{% endif %}"> 
             {%- if include.showtext -%}
@@ -13,7 +13,7 @@
                 <!-- Banner Logo -->
                   {%- if include.subimage -%}
                   <div class="category-grid__item__logo">
-                    <img src="{{include.subimage | relative_url}}" alt="Banner Logo" class="img-fluid">
+                    <img src="{{include.subimage | relative_url}}" alt="Banner Logo" class="img-fluid lazyload">
                   </div>
                   {%- endif -%}
                   <div class="owl-carousel__item__highlight">

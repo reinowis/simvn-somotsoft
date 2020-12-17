@@ -16,7 +16,7 @@
                     {%- if forloop.index == 1 -%}
                     <div class="col-12 category-grid__item">
                         <div class="category-grid__item__image">
-                            <img src="{{item.image | relative_url}}" alt="{{item.name}}">
+                            <img src="{{item.image | relative_url}}" alt="{{item.name}}" class="lazyload">
                         </div>
                         <div class="category-grid__item__content">
                             <div class="category-grid__item__title">{{item.name}}</div>

@@ -3,27 +3,35 @@ $(function () {
   $(document).ready(function(){
     /** Set up Carousel */
     $(".owl-carousel").each(function (index) {
-      var items_no = $(this).data('slides') || 3;
-      var autoplay = $(this).data('autoplay') || false;
-      var nav = $(this).data('nav') || false;
-      var dots = $(this).data('dots') || false;
-      var slidesMobile = $(this).data('slides-mobile') || items_no;
-      var slidesTablet = $(this).data('slides-tablet') || items_no;
-      var loop = $(this).data('loop') || false;
-      var autoplaySpeed = false;
-      var smartSpeed = $(this).data('smart-speed') || 1000;
-      var navText = ['&#x27;next&#x27;','&#x27;prev&#x27;'];
-      if ($(this).data('custom-nav')){
+      var element = $(this);
+      var items_no = element.data('slides') || 3;
+      var autoplay = element.data('autoplay') || false;
+      var nav = element.data('nav') || false;
+      var dots = element.data('dots') || false;
+      var slidesMobile = element.data('slides-mobile') || items_no;
+      var slidesTablet = element.data('slides-tablet') || items_no;
+      var loop = element.data('loop') || false;
+      var autoplaySpeed = element.data('autoplay-speed') ||false;
+      var autoplayTimeout = element.data('autoplay-speed') ||5000;
+      var smartSpeed = element.data('smart-speed') || 1000;
+      var autoplayHoverPause = element.data('autoplay-hover-pause') || false;
+      var lazyload = element.data('lazyload') || false;
+      var navText = ['<i class="fas fa-angle-left"></i>','<i class="fas fa-angle-right"></i>'];
+      if (element.data('custom-nav')){
         navText = ['<i class="fas fa-chevron-circle-left"></i>', '<i class="fas fa-chevron-circle-right"></i>'];
-      };
-      $(this).owlCarousel({
+      }
+      var sameHeight = element.data('same-height') || false;
+      element.owlCarousel({
           autoplay: autoplay,
           nav: nav,
           dots: dots,
           loop: loop,
           autoplaySpeed: autoplaySpeed,
           smartSpeed: smartSpeed,
+          autoplayHoverPause: autoplayHoverPause,
+          autoplayTimeout: autoplayTimeout,
           navText: navText,
+          lazyload: lazyload,
           responsive: {
             0:{
               items: slidesMobile
@@ -34,12 +42,21 @@ $(function () {
             992: {
               items: items_no
             }
-          }
+          },
+          onRefresh: function () {
+            if (sameHeight){
+              element.find('.owl-item').height('');
+            }
+          },
+          onRefreshed: function () {
+            if (sameHeight){
+              element.find('.owl-item').height(element.height());
+            }
+          } 
       });
     });
     /** End of Carousel */
     /** Sticky the header */
-    // get the sticky element
     var stickyElem = $(".header__mobile__collapse");
     var observer = new IntersectionObserver(function(e){
         for (let i = 0; i < e.length; i++){
@@ -77,6 +94,8 @@ $(function () {
         });
       } // End if
     });
+    /** Lazyload */
+    lazyload();
   });
 });
 
@@ -93,4 +112,4 @@ function showCategoryPopup(){
 $('#category-popup').on('shown.bs.modal	', function (e) {
   // do something...
 })
-/** Edn of Set up category popup */
+/** End of Set up category popup */
