@@ -1,11 +1,15 @@
 ---
 layout: default
 id: home
+banner:
+    highlighttext:
+        - Phục vụ bạn
+        - Với cả trái tim
+    secondarytext: Với đầy đủ các nhóm sản phẩm khác nhau
 ---
 
 <!-- Homepage Banner -->
-{%- include commons/banner.html image="/assets/images/banner-01.png"-%}
-
+{%- include commons/banner.html image="/assets/images/banner-01.png" type="homepage" showtext=true subimage="/assets/images/logo-banner.png" highlighttext=layout.banner.primarytext secondarytext=layout.banner.secondaytext -%}
 <!-- Category Grid -->
 <section class="container section category-grid">
     <div class="row not-gutters">
@@ -106,7 +110,7 @@ id: home
         </div>
         <div class="row no-gutters partner-slides__wrapper">
             <div class="col-12">
-                <div class="owl-carousel owl-theme" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true">
+                <div class="owl-carousel owl-theme owl-carousel--images" data-slides="4" data-slides-mobile="2" data-nav="true" data-dots="true" data-loop="true">
                     {%- for item in site.data.partners -%}
                         <div class="partner-slides__item">
                             <img src="{{item | relative_url}}" alt="Partner" class="img-fluid">
