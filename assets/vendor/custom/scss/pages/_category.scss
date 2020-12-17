@@ -21,6 +21,9 @@
     &__content{
         color: $deep-violet;
         @extend .text-path;
+        &:hover, &:focus{
+            color: $deep-violet;
+        }
     }
 }
 .category-paging{
