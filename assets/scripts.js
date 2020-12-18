@@ -12,7 +12,7 @@ $(function () {
       var slidesTablet = element.data('slides-tablet') || items_no;
       var loop = element.data('loop') || false;
       var autoplaySpeed = element.data('autoplay-speed') ||false;
-      var autoplayTimeout = element.data('autoplay-speed') ||5000;
+      var autoplayTimeout = element.data('autoplay-timeout') ||5000;
       var smartSpeed = element.data('smart-speed') || 1000;
       var autoplayHoverPause = element.data('autoplay-hover-pause') || false;
       var lazyload = element.data('lazyload') || false;
@@ -43,18 +43,49 @@ $(function () {
               items: items_no
             }
           },
+          onInitialize: function(){
+            toggleCarouselLoading(element, true);
+          },
           onRefresh: function () {
+            toggleCarouselLoading(element, true);
             if (sameHeight){
               element.find('.owl-item').height('');
             }
           },
           onRefreshed: function () {
             if (sameHeight){
-              element.find('.owl-item').height(element.height());
+              element.find(".owl-stage").height('');
+              setTimeout(function(){
+                var minHeight = element.find('.owl-item').eq(0).outerHeight() || 0;
+                element.find('.owl-item').each(function(){
+                  minHeight = $(this).outerHeight() >= minHeight ? $(this).outerHeight() : minHeight;
+                })
+                element.find(".owl-stage").height(minHeight);
+                toggleCarouselLoading(element, false);
+              }, 500);
+            }else{
+              toggleCarouselLoading(element, false);
             }
-          } 
+          }
       });
     });
+
+    /** Handle loading on resize or refresh */
+    function toggleCarouselLoading(element, mode){
+      if (mode){
+        element.addClass('owl-carousel--loading');
+        if (element.children('.owl-carousel--loading__icon').length == 0){
+          element.append('<div class="owl-carousel--loading__icon"><i class="fas fa-spinner fa-spin"></i></div>');
+        }
+      }else{
+        element.removeClass('owl-carousel--loading');
+        if (element.find('.owl-carousel--loading__icon').parents('.owl-item')){
+          element.find('.owl-carousel--loading__icon').parents('.owl-item').remove();
+        }
+        element.find('.owl-carousel--loading__icon').remove();
+      }
+    }
+    /** End of Handle loading */
     /** End of Carousel */
     /** Sticky the header */
     var stickyElem = $(".header__mobile__collapse");
@@ -70,7 +101,7 @@ $(function () {
           }
         }
       }, {threshold: [0], rootMargin: '-50px 0px -55%'});
-    for (let i = 0; i < stickyElem.length; i++){
+    for (var i = 0; i < stickyElem.length; i++){
       observer.observe(stickyElem[i]);
     }
     /** Set up the custom select */
@@ -105,7 +136,7 @@ function showCategoryPopup(){
     backdrop: 'static',
     // Prevent click outside to close modal
     keyboard: false
-    // Prevnt escape key to close modal
+    // Prevent escape key to close modal
   });
 }
 /** Handling data for popup goes here*/

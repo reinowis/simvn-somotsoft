@@ -168,6 +168,11 @@
             padding: 3px 11.5px;
             color: $black;
             @extend .text-headline;
+            & + .select-customized__button.ui-selectmenu-button.ui-button{
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                margin-right: 0px;
+            }
         }
         &__input{
             border: solid 1px $brown-grey;
@@ -176,6 +181,11 @@
             padding: 3px 11.5px;
             color: $brown-grey;
             @extend .text-headline;
+            &:hover, &:focus{
+                border-color: $brown-grey;
+                outline: none;
+                box-shadow: none;
+            }
         }
     }
     // Header on Mobile/ Tablet

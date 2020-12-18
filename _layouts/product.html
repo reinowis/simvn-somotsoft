@@ -38,7 +38,7 @@ product:
   <div class="product-detail__wrapper">
     <div class="product-detail__item product-detail__gallery flex-grow-1">
       <div class="product-detail__image">
-        <a href="#" class="img-zoom">
+        <a href="{{layout.product.image | relative_url}}" data-fancybox="gallery" class="img-zoom">
           <img src="{{layout.product.image | relative_url}}" alt="{{layout.product.title}}" class="img-fluid lazyload">
         </a>
       </div>

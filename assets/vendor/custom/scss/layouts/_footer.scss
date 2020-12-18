@@ -50,6 +50,9 @@
             &__item{
                 display: inline-block;
                 margin-right: 15px;
+                &:hover{
+                    opacity: 0.7;
+                }
             }
         }
         &__copyright{
