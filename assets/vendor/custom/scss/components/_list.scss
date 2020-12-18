@@ -1,19 +1,21 @@
 .category-grid{
     &__wrapper{
         margin: auto;
+        margin-left: -4.75px;
+        margin-right: -4.75px;
     }
     &__item{
         position: relative;
         margin-top: 5.25px;
         margin-bottom: 5.25px;
-        padding-left: 3.25px;
-        padding-right: 3.25px;
+        padding-left: 4.75px;
+        padding-right: 4.75px;
         @include transition-all();
         &__image{
             position: absolute;
             top: 0px;
-            left: 3.25px;
-            width: calc(100% - 6.5px);
+            left: 4.75px;
+            width: calc(100% - 9.5px);
             height: 100%;
             &::before{
                 bottom: 0;
@@ -184,7 +186,7 @@
             justify-content: space-between;
             border-radius: 3px;
             border: solid 1px transparent;
-            box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.1);
             background-color: $white;
             padding: 30px 9px;
             height: 100%;
@@ -239,6 +241,9 @@
                 font-size: 16px;
                 color: $very-light-pink;
                 &:hover, &--activated{
+                    i{
+                        font-weight: 900;
+                    }
                     color: $dark-peach-two;
                     text-decoration: none;
                 }
@@ -249,6 +254,7 @@
                 &__wrapper{
                     z-index: 2;
                     transform: scale(1.035);
+                    box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.19);
                 }
                 &__image{
                     opacity: 0.7;
