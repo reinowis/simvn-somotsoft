@@ -22,8 +22,8 @@ title: S.I.M.VN
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
   S.I.M.VN
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://reinowis.github.io/simvn-somotsoft/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/simvn-somotsoft" # the subpath of your site, e.g. /blog
+url: "https://reinowis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  
 
