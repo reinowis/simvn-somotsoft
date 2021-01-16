@@ -27,9 +27,9 @@ product:
 <section class="section container category-path">
   <div class="category-path__wrapper">
     <div class="category-path__item">
-      <a href="{{'category.html' | relative_url}}" class="category-path__content">SẢN PHẨM</a>
-      <a href="{{'category.html' | relative_url}}" class="category-path__content">/ SỮA, KEM, YOGURT</a>
-      <a href="{{'category.html' | relative_url}}" class="category-path__content">/ DARK CHOCOLATE COMPOUND SLD- 2501-SB</a>
+      <a href="{{'category.html' | absolute_url}}" class="category-path__content">SẢN PHẨM</a>
+      <a href="{{'category.html' | absolute_url}}" class="category-path__content">/ SỮA, KEM, YOGURT</a>
+      <a href="{{'category.html' | absolute_url}}" class="category-path__content">/ DARK CHOCOLATE COMPOUND SLD- 2501-SB</a>
     </div>
   </div>
 </section>
@@ -38,16 +38,16 @@ product:
   <div class="product-detail__wrapper">
     <div class="product-detail__item product-detail__gallery flex-grow-1">
       <div class="product-detail__image">
-        <a href="{{layout.product.image | relative_url}}" data-fancybox="gallery" class="img-zoom">
-          <img src="{{layout.product.image | relative_url}}" alt="{{layout.product.title}}" class="img-fluid lazyload">
+        <a href="{{layout.product.image | absolute_url}}" data-fancybox="gallery" class="img-zoom">
+          <img src="{{layout.product.image | absolute_url}}" alt="{{layout.product.title}}" class="img-fluid lazyload">
         </a>
       </div>
       <ul class="product-detail__thumbnails">
         {%- for item in  layout.product.thumbnails-%}
         {%- if forloop.index <= 4 -%}
         <li class="product-detail__thumbnails__item">
-          <a href="{{item | relative_url}}" data-fancybox="gallery">
-            <img src="{{item | relative_url}}" alt="" class="img-fluid lazyload product-detail__thumbnails__item__image">
+          <a href="{{item | absolute_url}}" data-fancybox="gallery">
+            <img src="{{item | absolute_url}}" alt="" class="img-fluid lazyload product-detail__thumbnails__item__image">
             {%- if forloop.index ==4 -%}
               <div class="product-detail__thumbnails__item__text">
                 <span>+ 3</span>
@@ -113,7 +113,7 @@ product:
         <h3 class="list-category__heading">DANH MỤC</h3>
         {%- for item in site.data.categories -%}
         <li class="list-category__item {% if forloop.index == 1%}list-category__item--activated{% endif %}">
-          <a class="list-category__item__text" href="{{'category.html' | relative_url}}">{{item.name | capitalize }}</a>
+          <a class="list-category__item__text" href="{{'category.html' | absolute_url}}">{{item.name | capitalize }}</a>
         </li>
         {%- endfor -%}
       </ul>

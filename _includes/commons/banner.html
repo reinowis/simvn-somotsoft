@@ -13,7 +13,7 @@
                 <!-- Banner Logo -->
                   {%- if include.subimage -%}
                   <div class="category-grid__item__logo">
-                    <img src="{{include.subimage | relative_url}}" alt="Banner Logo" class="img-fluid lazyload">
+                    <img src="{{include.subimage | absolute_url}}" alt="Banner Logo" class="img-fluid lazyload">
                   </div>
                   {%- endif -%}
                   <div class="owl-carousel__item__highlight">
@@ -30,7 +30,7 @@
             </div>
             {%- endif -%}
             <div class="owl-carousel__item__image">
-              <img src="{{include.image | relative_url}}" alt="Homepage Banner">
+              <img src="{{include.image | absolute_url}}" alt="Homepage Banner">
             </div>
         </div>
         {%- endfor -%}

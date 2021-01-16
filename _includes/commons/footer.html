@@ -1,7 +1,7 @@
 <!-- Footer -->
 <div class="previous-arrow">
   <a href="#" title="Go to top">
-    <img src="{{'/assets/images/previous.svg'| relative_url}}" alt="" class="img-fluid lazyload">
+    <img src="{{'/assets/images/previous.svg'| absolute_url}}" alt="" class="img-fluid lazyload">
   </a>
   
 </div>
@@ -21,8 +21,8 @@
   <div class="container">
     <div class="row no-gutters footer__wrapper">
       <div class="col-12 footer__logo">
-        <a href="{{'index.html' | relative_url}}">
-          <img src="{{'/assets/images/logo-footer.png' | relative_url}}" alt="Logo" class="img-fluid lazyload">
+        <a href="{{'index.html' | absolute_url}}">
+          <img src="{{'/assets/images/logo-footer.png' | absolute_url}}" alt="Logo" class="img-fluid lazyload">
         </a>
       </div>
     </div>
@@ -52,7 +52,7 @@
           {%- for item in site.data.contact.social -%}
           <li class="footer__social-list__item">
             <a href="#">
-              <img src="{{item.icon | relative_url}}" alt="{{item.id}}" class="img-fluid lazyload">
+              <img src="{{item.icon | absolute_url}}" alt="{{item.id}}" class="img-fluid lazyload">
             </a>
           </li>
           {%- endfor -%}
@@ -69,7 +69,7 @@
         </ul>
       </div>
       <div class="footer__map">
-        <img src="{{"/assets/images/maps.png" | relative_url}}" alt="maps" class="img-fluid lazyload">
+        <img src="{{"/assets/images/maps.png" | absolute_url}}" alt="maps" class="img-fluid lazyload">
       </div>
     </div>
   </div>
